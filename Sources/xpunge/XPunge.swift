@@ -11,7 +11,7 @@ struct XPunge: ParsableCommand {
         Start with `xpunge scan`, then preview with `xpunge clean --dry-run`.
         Archives, device support, runtimes and Xcodes downloads are only cleaned when named.
         """,
-        version: "0.1.0-dev",
+        version: "0.1.0",
         subcommands: [Scan.self, Clean.self],
         defaultSubcommand: Scan.self
     )

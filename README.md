@@ -31,9 +31,21 @@ Cleaned only when named: runtimes (62.6 GB), xcodes-downloads (3.4 GB).
 Preview a clean with `xpunge clean --dry-run`.
 ```
 
-> **Status: early development.** No release yet. Tested on Xcode 26.2 only; Xcode 27 support is still being verified.
+> **Status: pre-release (v0.1.0).** Tested on Xcode 26.2 only; Xcode 27 support is still being verified. Start with `xpunge clean --dry-run`, and please [report anything odd](https://github.com/ajithrnayak/xpunge/issues).
 
 ## Install
+
+Download the universal binary (Apple silicon and Intel, macOS 13 or later):
+
+```sh
+curl -LO https://github.com/ajithrnayak/xpunge/releases/download/v0.1.0/xpunge-0.1.0-macos-universal.tar.gz
+curl -LO https://github.com/ajithrnayak/xpunge/releases/download/v0.1.0/xpunge-0.1.0-macos-universal.tar.gz.sha256
+shasum -a 256 -c xpunge-0.1.0-macos-universal.tar.gz.sha256
+tar -xzf xpunge-0.1.0-macos-universal.tar.gz
+mv xpunge /usr/local/bin/   # or anywhere on your PATH
+```
+
+The binary isn't notarized yet. Downloading with `curl` as above avoids Gatekeeper's block. If you downloaded it in a browser and macOS refuses to open it, run `xattr -d com.apple.quarantine xpunge`.
 
 From source (needs Swift 6 and macOS 13 or later):
 
