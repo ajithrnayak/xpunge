@@ -63,7 +63,8 @@ public struct Planner: Sendable {
                 plan.notes.append("Archives hold the dSYMs needed to symbolicate crash reports from shipped builds.")
             }
             plan.actions += items.map {
-                Action(category: category.id, kind: .remove($0), label: $0.lastPathComponent, bytes: Sizer.size(of: $0))
+                Action(category: category.id, kind: .remove($0), label: Folder.label(for: $0, roots: category.roots),
+                       bytes: Sizer.size(of: $0))
             }
 
         case .files(let suffixes):

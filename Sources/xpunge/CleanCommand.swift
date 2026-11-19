@@ -49,7 +49,7 @@ struct Clean: ParsableCommand {
         let context = Context.current()
         let options = CleanOptions(runtimes: runtimes, notUsedSinceDays: notUsedSince, keepLatest: keepLatest)
 
-        let plan: Plan
+        var plan: Plan
         do {
             plan = try Planner(env: context.env, simctl: context.queries).plan(named: categories, options: options)
         } catch let error as GuardError {
@@ -60,11 +60,15 @@ struct Clean: ParsableCommand {
             throw ExitCode.failure
         }
 
+        plan = plan.ordered()
+        let terminal = Terminal.current()
+
         if dryRun {
-            print(json ? try Render.json(PlanOutput(plan: plan, dryRun: true, results: nil)) : Render.plan(plan, dryRun: true))
+            print(json ? try Render.json(PlanOutput(plan: plan, dryRun: true, results: nil))
+                       : Render.plan(plan, dryRun: true, terminal: terminal))
             return
         }
-        if !json { print(Render.plan(plan, dryRun: false)) }
+        if !json { print(Render.plan(plan, dryRun: false, terminal: terminal)) }
         guard !plan.actions.isEmpty else { return }
 
         let running = RunningApps.running()
@@ -87,13 +91,13 @@ struct Clean: ParsableCommand {
 
         let executor = Executor(env: context.env, simctl: context.simctl)
         let results = executor.execute(plan) { result in
-            if !json { print(Render.progress(result)) }
+            if !json { print(Render.progress(result, terminal: terminal)) }
         }
 
         if json {
             print(try Render.json(PlanOutput(plan: plan, dryRun: false, results: results)))
         } else {
-            print(Render.summary(results))
+            print(Render.summary(results, terminal: terminal))
         }
         if results.contains(where: { !$0.succeeded }) { throw Exit.partial }
     }

@@ -6,20 +6,29 @@ Xcode quietly fills tens of gigabytes: simulator runtimes, DerivedData, package 
 
 ```
 $ xpunge scan
-CATEGORY                SIZE  CLEAN        NOTE
-runtimes             62.6 GB  by name      8 runtimes, 4 with no recorded use
-simulator-devices   11.46 GB  default      21 unavailable (1.72 GB)
-swiftpm-cache        9.37 GB  default
-previews             8.56 GB  default      3 unavailable (3.57 GB)
-playground-devices   5.94 GB  report only
-xcodes-downloads      3.4 GB  by name      includes unfinished downloads
-cocoapods-cache      1.84 GB  default
-documentation         553 MB  default
-derived-data          187 MB  default      includes compilation cache (29 KB)
-…
++--------------------+-----------+-------------+------------------------------------+
+|                                    xpunge scan                                    |
++--------------------+-----------+-------------+------------------------------------+
+| Category           |      Size | Clean       | Note                               |
++--------------------+-----------+-------------+------------------------------------+
+| runtimes           |   62.6 GB | by name     | 8 runtimes, 4 with no recorded use |
+| simulator-devices  |  11.46 GB | default     | 21 unavailable (1.72 GB)           |
+| swiftpm-cache      |   9.37 GB | default     |                                    |
+| previews           |   8.56 GB | default     | 3 unavailable (3.57 GB)            |
+| playground-devices |   5.94 GB | report only |                                    |
+| xcode-apps         |   4.24 GB | report only | 1 installed                        |
+| xcodes-downloads   |    3.4 GB | by name     | includes unfinished downloads      |
+| cocoapods-cache    |   1.84 GB | default     |                                    |
+| documentation      |    553 MB | default     |                                    |
+| derived-data       |    187 MB | default     | includes compilation cache (29 KB) |
+| …                  |           |             |                                    |
++--------------------+-----------+-------------+------------------------------------+
+| Total              | 108.15 GB |             | a plain clean frees about 17.25 GB |
++--------------------+-----------+-------------+------------------------------------+
 
-A plain `xpunge clean` would free about 17.24 GB. Preview it with `xpunge clean --dry-run`.
-Cleaned only when named: runtimes 62.6 GB, xcodes-downloads 3.4 GB.
+Voilà! 🧐 Xcode is using 108.15 GB here; a plain clean frees about 17.25 GB.
+Cleaned only when named: runtimes (62.6 GB), xcodes-downloads (3.4 GB).
+Preview a clean with `xpunge clean --dry-run`.
 ```
 
 > **Status: early development.** No release yet. Tested on Xcode 26.2 only; Xcode 27 support is still being verified.
@@ -57,6 +66,8 @@ xpunge clean archives                           # only ever when named
 `clean` always shows its plan first and asks before removing anything. It refuses to run while Xcode or Simulator is open, and refuses to run without a terminal unless you pass `--yes`. Removal is permanent: moving items to the Trash wouldn't free any space until the Trash was emptied.
 
 Exit codes: `0` done, `1` error, `2` some items failed, `3` refused for safety.
+
+In a terminal, success messages open with a random interjection and emoji ("Woohoo! 🎉 xpunge freed about 17.25 GB."). Piped output stays plain. Set `XPUNGE_PLAIN=1` to turn the fun off, or `NO_COLOR=1` to turn off colour.
 
 ## Categories
 

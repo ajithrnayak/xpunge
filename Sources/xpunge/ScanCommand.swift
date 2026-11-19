@@ -24,7 +24,9 @@ struct Scan: ParsableCommand {
         if json {
             print(try Render.json(reports))
         } else {
-            print(Render.scanTable(reports, details: details, xcodeFound: context.simctl != nil))
+            print(Render.scanTable(reports, details: details, complete: categories.isEmpty,
+                                   xcodeFound: context.simctl != nil,
+                                   terminal: Terminal.current()))
         }
     }
 }

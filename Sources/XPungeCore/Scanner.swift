@@ -60,7 +60,7 @@ public struct Scanner: Sendable {
             details = category.roots.map { Detail(name: $0.lastPathComponent, bytes: Sizer.size(of: $0), note: nil) }
         default:
             details = Folder.children(of: category.roots).map {
-                Detail(name: $0.lastPathComponent, bytes: Sizer.size(of: $0), note: nil)
+                Detail(name: Folder.label(for: $0, roots: category.roots), bytes: Sizer.size(of: $0), note: nil)
             }
         }
         details.sort { $0.bytes > $1.bytes }
@@ -154,6 +154,13 @@ enum RuntimeAge {
 }
 
 enum Folder {
+    /// The item's name, prefixed with its folder when the category has several roots,
+    /// so "Cache.db" in two caches can be told apart.
+    static func label(for item: URL, roots: [URL]) -> String {
+        guard roots.count > 1 else { return item.lastPathComponent }
+        return item.deletingLastPathComponent().lastPathComponent + "/" + item.lastPathComponent
+    }
+
     /// Items directly inside each existing root, hidden files included.
     static func children(of roots: [URL]) -> [URL] {
         roots.flatMap { root in

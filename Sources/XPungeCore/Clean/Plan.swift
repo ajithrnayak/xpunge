@@ -30,6 +30,16 @@ public struct Plan: Sendable {
 
     public var totalBytes: Int64 { actions.reduce(0) { $0 + $1.bytes } }
     public var categories: [CategoryID] { Array(Set(actions.map(\.category))).sorted() }
+
+    /// The same plan with actions grouped by category, largest first within each.
+    /// Display and execution both use this order so step numbers match.
+    public func ordered() -> Plan {
+        var copy = self
+        copy.actions = categories.flatMap { category in
+            actions.filter { $0.category == category }.sorted { $0.bytes > $1.bytes }
+        }
+        return copy
+    }
 }
 
 public struct CleanOptions: Sendable {

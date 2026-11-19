@@ -137,7 +137,11 @@ import Testing
         let plan = try Planner(env: home.env, simctl: nil)
             .plan(named: [.deviceSupport], options: CleanOptions(keepLatest: 2))
         // Kept: 16.7 and 16.6 on iOS, 8.7.1 on watchOS. Both 16.5.1 entries and 16.5 go.
-        #expect(Set(plan.actions.map(\.label)) == ["iPhone13,2 16.5.1 (20F75)", "iPhone13,2 16.5 (20F66)", "16.5.1 (20F66) arm64e"])
+        #expect(Set(plan.actions.map(\.label)) == [
+            "iOS DeviceSupport/iPhone13,2 16.5.1 (20F75)",
+            "iOS DeviceSupport/iPhone13,2 16.5 (20F66)",
+            "iOS DeviceSupport/16.5.1 (20F66) arm64e",
+        ])
     }
 
     @Test func deviceSupportVersionParsing() {
