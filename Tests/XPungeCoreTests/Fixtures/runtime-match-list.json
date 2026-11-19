@@ -1,0 +1,34 @@
+{
+  "appletvos26.2" : {
+    "chosenRuntimeBuild" : "23K50",
+    "defaultBuild" : "23K50",
+    "platform" : "com.apple.platform.appletvos",
+    "sdkBuild" : "23K50",
+    "sdkDirectory" : "\/Applications\/Xcode-26.2.0.app\/Contents\/Developer\/Platforms\/AppleTVOS.platform\/Developer\/SDKs\/AppleTVOS26.2.sdk",
+    "sdkVersion" : "26.2"
+  },
+  "iphoneos26.2" : {
+    "chosenRuntimeBuild" : "23C54",
+    "defaultBuild" : "23C53",
+    "platform" : "com.apple.platform.iphoneos",
+    "sdkBuild" : "23C53",
+    "sdkDirectory" : "\/Applications\/Xcode-26.2.0.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Developer\/SDKs\/iPhoneOS26.2.sdk",
+    "sdkVersion" : "26.2"
+  },
+  "watchos26.2" : {
+    "chosenRuntimeBuild" : "23S303",
+    "defaultBuild" : "23S303",
+    "platform" : "com.apple.platform.watchos",
+    "sdkBuild" : "23S303",
+    "sdkDirectory" : "\/Applications\/Xcode-26.2.0.app\/Contents\/Developer\/Platforms\/WatchOS.platform\/Developer\/SDKs\/WatchOS26.2.sdk",
+    "sdkVersion" : "26.2"
+  },
+  "xros26.2" : {
+    "chosenRuntimeBuild" : "23N301",
+    "defaultBuild" : "23N301",
+    "platform" : "com.apple.platform.xros",
+    "sdkBuild" : "23N301",
+    "sdkDirectory" : "\/Applications\/Xcode-26.2.0.app\/Contents\/Developer\/Platforms\/XROS.platform\/Developer\/SDKs\/XROS26.2.sdk",
+    "sdkVersion" : "26.2"
+  }
+}

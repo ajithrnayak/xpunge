@@ -1,0 +1,1125 @@
+{
+  "devices" : {
+    "com.apple.CoreSimulator.SimRuntime.iOS-17-2" : [
+      {
+        "lastBootedAt" : "2024-02-24T07:50:33Z",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/9035911E-DE4F-48A9-95B9-B761F57B3A45\/data",
+        "dataPathSize" : 836083712,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/9035911E-DE4F-48A9-95B9-B761F57B3A45",
+        "udid" : "9035911E-DE4F-48A9-95B9-B761F57B3A45",
+        "isAvailable" : true,
+        "logPathSize" : 106496,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro",
+        "state" : "Shutdown",
+        "name" : "iPhone 15 Pro"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/BB42EE25-5E0D-4224-8E24-BB5B9AC3749A\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/BB42EE25-5E0D-4224-8E24-BB5B9AC3749A",
+        "udid" : "BB42EE25-5E0D-4224-8E24-BB5B9AC3749A",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro-Max",
+        "state" : "Shutdown",
+        "name" : "iPhone 15 Pro Max"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/7F7A3FD9-4443-409D-9282-E79864DB71A8\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/7F7A3FD9-4443-409D-9282-E79864DB71A8",
+        "udid" : "7F7A3FD9-4443-409D-9282-E79864DB71A8",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15",
+        "state" : "Shutdown",
+        "name" : "iPhone 15"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/DD7504A0-0AB6-433F-B411-308069B48D59\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/DD7504A0-0AB6-433F-B411-308069B48D59",
+        "udid" : "DD7504A0-0AB6-433F-B411-308069B48D59",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Plus",
+        "state" : "Shutdown",
+        "name" : "iPhone 15 Plus"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/436DBB6A-54D0-4D2F-8AF3-360BCD223AB2\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/436DBB6A-54D0-4D2F-8AF3-360BCD223AB2",
+        "udid" : "436DBB6A-54D0-4D2F-8AF3-360BCD223AB2",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+        "state" : "Shutdown",
+        "name" : "iPhone SE (3rd generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/C06454EB-ABAA-485A-8F44-C7E2C9EC6226\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/C06454EB-ABAA-485A-8F44-C7E2C9EC6226",
+        "udid" : "C06454EB-ABAA-485A-8F44-C7E2C9EC6226",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-4th-generation-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro (11-inch) (4th generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/6DFEB5FB-821C-4CEC-AE2B-4FA40A1BF18A\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/6DFEB5FB-821C-4CEC-AE2B-4FA40A1BF18A",
+        "udid" : "6DFEB5FB-821C-4CEC-AE2B-4FA40A1BF18A",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-12-9-inch-6th-generation-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro (12.9-inch) (6th generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/05EE064B-F070-40CA-BD19-8391D58CE707\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/05EE064B-F070-40CA-BD19-8391D58CE707",
+        "udid" : "05EE064B-F070-40CA-BD19-8391D58CE707",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-10th-generation",
+        "state" : "Shutdown",
+        "name" : "iPad (10th generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/908EBAE6-44B9-43B0-AF7B-21262A366FFF\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/908EBAE6-44B9-43B0-AF7B-21262A366FFF",
+        "udid" : "908EBAE6-44B9-43B0-AF7B-21262A366FFF",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-5th-generation",
+        "state" : "Shutdown",
+        "name" : "iPad Air (5th generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/1603E5C8-2976-404D-A055-D67F6B6724B3\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/1603E5C8-2976-404D-A055-D67F6B6724B3",
+        "udid" : "1603E5C8-2976-404D-A055-D67F6B6724B3",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini-6th-generation",
+        "state" : "Shutdown",
+        "name" : "iPad mini (6th generation)"
+      }
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-17-0" : [
+      {
+        "lastBootedAt" : "2023-12-04T07:15:52Z",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/3AF8AF96-D439-4F6A-88DF-63D85300532E\/data",
+        "dataPathSize" : 2424475648,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/3AF8AF96-D439-4F6A-88DF-63D85300532E",
+        "udid" : "3AF8AF96-D439-4F6A-88DF-63D85300532E",
+        "isAvailable" : true,
+        "logPathSize" : 188416,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro",
+        "state" : "Shutdown",
+        "name" : "iPhone 15 Pro"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/7E6234AB-4B2D-47C0-AAD7-6865F1A05B3B\/data",
+        "dataPathSize" : 13258752,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/7E6234AB-4B2D-47C0-AAD7-6865F1A05B3B",
+        "udid" : "7E6234AB-4B2D-47C0-AAD7-6865F1A05B3B",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro-Max",
+        "state" : "Shutdown",
+        "name" : "iPhone 15 Pro Max"
+      },
+      {
+        "lastBootedAt" : "2023-11-19T17:46:09Z",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/B7B2CF20-511C-42CF-89E2-DF07314CE185\/data",
+        "dataPathSize" : 2930016256,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/B7B2CF20-511C-42CF-89E2-DF07314CE185",
+        "udid" : "B7B2CF20-511C-42CF-89E2-DF07314CE185",
+        "isAvailable" : true,
+        "logPathSize" : 270336,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15",
+        "state" : "Shutdown",
+        "name" : "iPhone 15"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/4441AEA9-CE2D-4B1E-8A21-1AD67DD0F0B8\/data",
+        "dataPathSize" : 13258752,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/4441AEA9-CE2D-4B1E-8A21-1AD67DD0F0B8",
+        "udid" : "4441AEA9-CE2D-4B1E-8A21-1AD67DD0F0B8",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Plus",
+        "state" : "Shutdown",
+        "name" : "iPhone 15 Plus"
+      },
+      {
+        "lastBootedAt" : "2023-07-24T08:16:57Z",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/572ED07E-4D9C-4A31-A4BE-F7B7BDAEA68C\/data",
+        "dataPathSize" : 1140748288,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/572ED07E-4D9C-4A31-A4BE-F7B7BDAEA68C",
+        "udid" : "572ED07E-4D9C-4A31-A4BE-F7B7BDAEA68C",
+        "isAvailable" : true,
+        "logPathSize" : 61440,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Pro",
+        "state" : "Shutdown",
+        "name" : "iPhone 14 Pro"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/D07C6FAE-E916-4904-BFDA-91C4C5A435FA\/data",
+        "dataPathSize" : 13258752,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/D07C6FAE-E916-4904-BFDA-91C4C5A435FA",
+        "udid" : "D07C6FAE-E916-4904-BFDA-91C4C5A435FA",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Pro-Max",
+        "state" : "Shutdown",
+        "name" : "iPhone 14 Pro Max"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/C1ADBDE4-F12B-4FD7-8B93-B03926EF464E\/data",
+        "dataPathSize" : 13258752,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/C1ADBDE4-F12B-4FD7-8B93-B03926EF464E",
+        "udid" : "C1ADBDE4-F12B-4FD7-8B93-B03926EF464E",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-14",
+        "state" : "Shutdown",
+        "name" : "iPhone 14"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/BE24B706-8328-48BC-A540-FA791FF48F1D\/data",
+        "dataPathSize" : 13258752,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/BE24B706-8328-48BC-A540-FA791FF48F1D",
+        "udid" : "BE24B706-8328-48BC-A540-FA791FF48F1D",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Plus",
+        "state" : "Shutdown",
+        "name" : "iPhone 14 Plus"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/F9B2538C-FE6E-4D55-8B8E-4BA679F42B45\/data",
+        "dataPathSize" : 13258752,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/F9B2538C-FE6E-4D55-8B8E-4BA679F42B45",
+        "udid" : "F9B2538C-FE6E-4D55-8B8E-4BA679F42B45",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+        "state" : "Shutdown",
+        "name" : "iPhone SE (3rd generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/18991F40-A60B-4350-B28A-57D382C786E6\/data",
+        "dataPathSize" : 13258752,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/18991F40-A60B-4350-B28A-57D382C786E6",
+        "udid" : "18991F40-A60B-4350-B28A-57D382C786E6",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-4th-generation-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro (11-inch) (4th generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/CB187155-B46B-4BCA-B4B6-DCDAAD77D8F3\/data",
+        "dataPathSize" : 13258752,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/CB187155-B46B-4BCA-B4B6-DCDAAD77D8F3",
+        "udid" : "CB187155-B46B-4BCA-B4B6-DCDAAD77D8F3",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-12-9-inch-6th-generation-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro (12.9-inch) (6th generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/045141A0-829A-42D0-859C-8A4546085859\/data",
+        "dataPathSize" : 13258752,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/045141A0-829A-42D0-859C-8A4546085859",
+        "udid" : "045141A0-829A-42D0-859C-8A4546085859",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-10th-generation",
+        "state" : "Shutdown",
+        "name" : "iPad (10th generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/58313DC2-72CB-4171-B494-341BCD69BFA2\/data",
+        "dataPathSize" : 13258752,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/58313DC2-72CB-4171-B494-341BCD69BFA2",
+        "udid" : "58313DC2-72CB-4171-B494-341BCD69BFA2",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-5th-generation",
+        "state" : "Shutdown",
+        "name" : "iPad Air (5th generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/5024D335-3680-46D3-BB0A-2101C0406FB5\/data",
+        "dataPathSize" : 13258752,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/5024D335-3680-46D3-BB0A-2101C0406FB5",
+        "udid" : "5024D335-3680-46D3-BB0A-2101C0406FB5",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini-6th-generation",
+        "state" : "Shutdown",
+        "name" : "iPad mini (6th generation)"
+      }
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-18-3" : [
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/F8685981-3C47-4934-8784-F536114CB214\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/F8685981-3C47-4934-8784-F536114CB214",
+        "udid" : "F8685981-3C47-4934-8784-F536114CB214",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro",
+        "state" : "Shutdown",
+        "name" : "iPhone 16 Pro"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/A94445A5-E027-4350-9B65-2B60C423560E\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/A94445A5-E027-4350-9B65-2B60C423560E",
+        "udid" : "A94445A5-E027-4350-9B65-2B60C423560E",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro-Max",
+        "state" : "Shutdown",
+        "name" : "iPhone 16 Pro Max"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/EFE42785-D780-4415-9634-0908E274D8AA\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/EFE42785-D780-4415-9634-0908E274D8AA",
+        "udid" : "EFE42785-D780-4415-9634-0908E274D8AA",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16e",
+        "state" : "Shutdown",
+        "name" : "iPhone 16e"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/DA179CD8-8E17-4A21-9FC2-5019F839F005\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/DA179CD8-8E17-4A21-9FC2-5019F839F005",
+        "udid" : "DA179CD8-8E17-4A21-9FC2-5019F839F005",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16",
+        "state" : "Shutdown",
+        "name" : "iPhone 16"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/59891581-2748-47D3-A6B4-3C2CE3B80708\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/59891581-2748-47D3-A6B4-3C2CE3B80708",
+        "udid" : "59891581-2748-47D3-A6B4-3C2CE3B80708",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Plus",
+        "state" : "Shutdown",
+        "name" : "iPhone 16 Plus"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/623BC725-330B-4545-A8BA-45EBFB821524\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/623BC725-330B-4545-A8BA-45EBFB821524",
+        "udid" : "623BC725-330B-4545-A8BA-45EBFB821524",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+        "state" : "Shutdown",
+        "name" : "iPhone SE (3rd generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/BA9176F7-1385-4FEE-BA19-57777DA0E428\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/BA9176F7-1385-4FEE-BA19-57777DA0E428",
+        "udid" : "BA9176F7-1385-4FEE-BA19-57777DA0E428",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M4-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro 11-inch (M4)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/1A4C7B06-95A1-4A10-8BE4-6A7328E3085B\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/1A4C7B06-95A1-4A10-8BE4-6A7328E3085B",
+        "udid" : "1A4C7B06-95A1-4A10-8BE4-6A7328E3085B",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-13-inch-M4-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro 13-inch (M4)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/4F21D539-47C3-43B9-A209-5F20EA5C08CC\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/4F21D539-47C3-43B9-A209-5F20EA5C08CC",
+        "udid" : "4F21D539-47C3-43B9-A209-5F20EA5C08CC",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-13-inch-M3",
+        "state" : "Shutdown",
+        "name" : "iPad Air 13-inch (M3)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/74EB7AF9-0950-4CBA-8702-EB37FF03B72E\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/74EB7AF9-0950-4CBA-8702-EB37FF03B72E",
+        "udid" : "74EB7AF9-0950-4CBA-8702-EB37FF03B72E",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-11-inch-M3",
+        "state" : "Shutdown",
+        "name" : "iPad Air 11-inch (M3)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/5057CDCD-9D03-40CC-B2FC-085C73556075\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/5057CDCD-9D03-40CC-B2FC-085C73556075",
+        "udid" : "5057CDCD-9D03-40CC-B2FC-085C73556075",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-11-inch-M2",
+        "state" : "Shutdown",
+        "name" : "iPad Air 11-inch (M2)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/1DB79745-A55A-4E6D-9E87-EEEB14533C03\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/1DB79745-A55A-4E6D-9E87-EEEB14533C03",
+        "udid" : "1DB79745-A55A-4E6D-9E87-EEEB14533C03",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-13-inch-M2",
+        "state" : "Shutdown",
+        "name" : "iPad Air 13-inch (M2)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/E95AA84D-06D6-4025-B0AD-1FDF7E0185E1\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/E95AA84D-06D6-4025-B0AD-1FDF7E0185E1",
+        "udid" : "E95AA84D-06D6-4025-B0AD-1FDF7E0185E1",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini-A17-Pro",
+        "state" : "Shutdown",
+        "name" : "iPad mini (A17 Pro)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/9B42E736-1651-49A7-AA7F-2C719A363C42\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/9B42E736-1651-49A7-AA7F-2C719A363C42",
+        "udid" : "9B42E736-1651-49A7-AA7F-2C719A363C42",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-A16",
+        "state" : "Shutdown",
+        "name" : "iPad (A16)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/23036E9D-E1DD-4F57-B76A-E56466FD3F9C\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/23036E9D-E1DD-4F57-B76A-E56466FD3F9C",
+        "udid" : "23036E9D-E1DD-4F57-B76A-E56466FD3F9C",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-10th-generation",
+        "state" : "Shutdown",
+        "name" : "iPad (10th generation)"
+      }
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-17-4" : [
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/B4C3F06A-0910-4C08-A52A-4335C70C31E2\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/B4C3F06A-0910-4C08-A52A-4335C70C31E2",
+        "udid" : "B4C3F06A-0910-4C08-A52A-4335C70C31E2",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro",
+        "state" : "Shutdown",
+        "name" : "iPhone 15 Pro"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/445099B1-13D4-4841-BC61-DC7709F20093\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/445099B1-13D4-4841-BC61-DC7709F20093",
+        "udid" : "445099B1-13D4-4841-BC61-DC7709F20093",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro-Max",
+        "state" : "Shutdown",
+        "name" : "iPhone 15 Pro Max"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/3FDA35C9-85CD-4C96-8D10-2DA0DCF71E1F\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/3FDA35C9-85CD-4C96-8D10-2DA0DCF71E1F",
+        "udid" : "3FDA35C9-85CD-4C96-8D10-2DA0DCF71E1F",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15",
+        "state" : "Shutdown",
+        "name" : "iPhone 15"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/D635E2C9-0C4C-421C-8024-9573457327C1\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/D635E2C9-0C4C-421C-8024-9573457327C1",
+        "udid" : "D635E2C9-0C4C-421C-8024-9573457327C1",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Plus",
+        "state" : "Shutdown",
+        "name" : "iPhone 15 Plus"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/54269DCE-B129-4709-AF22-4841E2D74AA6\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/54269DCE-B129-4709-AF22-4841E2D74AA6",
+        "udid" : "54269DCE-B129-4709-AF22-4841E2D74AA6",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+        "state" : "Shutdown",
+        "name" : "iPhone SE (3rd generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/DA5301DA-5AB2-49DB-BB89-3170D8CDDCA0\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/DA5301DA-5AB2-49DB-BB89-3170D8CDDCA0",
+        "udid" : "DA5301DA-5AB2-49DB-BB89-3170D8CDDCA0",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M4-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro 11-inch (M4)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/43C90954-A72A-4C44-9D86-525CE70F9A9D\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/43C90954-A72A-4C44-9D86-525CE70F9A9D",
+        "udid" : "43C90954-A72A-4C44-9D86-525CE70F9A9D",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-13-inch-M4-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro 13-inch (M4)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/F8F3A7B2-659E-44AF-B541-FEFE96353E2B\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/F8F3A7B2-659E-44AF-B541-FEFE96353E2B",
+        "udid" : "F8F3A7B2-659E-44AF-B541-FEFE96353E2B",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-11-inch-M2",
+        "state" : "Shutdown",
+        "name" : "iPad Air 11-inch (M2)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/E8F134F3-C3A1-4D6F-A7CF-4BDE1F1D8E4C\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/E8F134F3-C3A1-4D6F-A7CF-4BDE1F1D8E4C",
+        "udid" : "E8F134F3-C3A1-4D6F-A7CF-4BDE1F1D8E4C",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-13-inch-M2",
+        "state" : "Shutdown",
+        "name" : "iPad Air 13-inch (M2)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/9E717F58-016C-47B2-8CD2-DF32CB459166\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/9E717F58-016C-47B2-8CD2-DF32CB459166",
+        "udid" : "9E717F58-016C-47B2-8CD2-DF32CB459166",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-4th-generation-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro (11-inch) (4th generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/021FEC6A-C3F1-442C-9CFD-2DD4C9E7CF16\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/021FEC6A-C3F1-442C-9CFD-2DD4C9E7CF16",
+        "udid" : "021FEC6A-C3F1-442C-9CFD-2DD4C9E7CF16",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-12-9-inch-6th-generation-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro (12.9-inch) (6th generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/1ABB4058-2446-4F54-9051-FB780C2253F3\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/1ABB4058-2446-4F54-9051-FB780C2253F3",
+        "udid" : "1ABB4058-2446-4F54-9051-FB780C2253F3",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-10th-generation",
+        "state" : "Shutdown",
+        "name" : "iPad (10th generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/D4FC1DDA-E71E-430B-BD25-6D939AD3B508\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/D4FC1DDA-E71E-430B-BD25-6D939AD3B508",
+        "udid" : "D4FC1DDA-E71E-430B-BD25-6D939AD3B508",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-5th-generation",
+        "state" : "Shutdown",
+        "name" : "iPad Air (5th generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/DC83B8CD-41CF-40DA-B31E-F99CFFDCFA24\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/DC83B8CD-41CF-40DA-B31E-F99CFFDCFA24",
+        "udid" : "DC83B8CD-41CF-40DA-B31E-F99CFFDCFA24",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini-6th-generation",
+        "state" : "Shutdown",
+        "name" : "iPad mini (6th generation)"
+      }
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-18-2" : [
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/6FD189DC-F8BC-4F4C-A858-8931E592722D\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/6FD189DC-F8BC-4F4C-A858-8931E592722D",
+        "udid" : "6FD189DC-F8BC-4F4C-A858-8931E592722D",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro",
+        "state" : "Shutdown",
+        "name" : "iPhone 16 Pro"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/CF8D8A1A-A265-4DF6-8EC8-5F7FCEA15297\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/CF8D8A1A-A265-4DF6-8EC8-5F7FCEA15297",
+        "udid" : "CF8D8A1A-A265-4DF6-8EC8-5F7FCEA15297",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro-Max",
+        "state" : "Shutdown",
+        "name" : "iPhone 16 Pro Max"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/07643912-23E8-40DE-A383-67BCB7568DE1\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/07643912-23E8-40DE-A383-67BCB7568DE1",
+        "udid" : "07643912-23E8-40DE-A383-67BCB7568DE1",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16",
+        "state" : "Shutdown",
+        "name" : "iPhone 16"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/3E0E627B-B996-4974-BE26-2A7CA101B967\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/3E0E627B-B996-4974-BE26-2A7CA101B967",
+        "udid" : "3E0E627B-B996-4974-BE26-2A7CA101B967",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Plus",
+        "state" : "Shutdown",
+        "name" : "iPhone 16 Plus"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/F8B8B6B6-6E66-490F-93F5-D936765ED157\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/F8B8B6B6-6E66-490F-93F5-D936765ED157",
+        "udid" : "F8B8B6B6-6E66-490F-93F5-D936765ED157",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+        "state" : "Shutdown",
+        "name" : "iPhone SE (3rd generation)"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/7F6853C1-FA55-4652-B456-2627605EC95D\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/7F6853C1-FA55-4652-B456-2627605EC95D",
+        "udid" : "7F6853C1-FA55-4652-B456-2627605EC95D",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M4-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro 11-inch (M4)"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/F0C2FE3B-FB3F-4AF6-98BA-DDA6789E3BAD\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/F0C2FE3B-FB3F-4AF6-98BA-DDA6789E3BAD",
+        "udid" : "F0C2FE3B-FB3F-4AF6-98BA-DDA6789E3BAD",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-13-inch-M4-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro 13-inch (M4)"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/032ADB7E-20D7-4AC3-B221-76095DCD1629\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/032ADB7E-20D7-4AC3-B221-76095DCD1629",
+        "udid" : "032ADB7E-20D7-4AC3-B221-76095DCD1629",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-11-inch-M2",
+        "state" : "Shutdown",
+        "name" : "iPad Air 11-inch (M2)"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/26BDBED1-6B27-4B75-B212-01F3EA3CA96F\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/26BDBED1-6B27-4B75-B212-01F3EA3CA96F",
+        "udid" : "26BDBED1-6B27-4B75-B212-01F3EA3CA96F",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-13-inch-M2",
+        "state" : "Shutdown",
+        "name" : "iPad Air 13-inch (M2)"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/0D180E76-2175-4918-B350-44F6A14FC65B\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/0D180E76-2175-4918-B350-44F6A14FC65B",
+        "udid" : "0D180E76-2175-4918-B350-44F6A14FC65B",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini-A17-Pro",
+        "state" : "Shutdown",
+        "name" : "iPad mini (A17 Pro)"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/A0D5CAA7-6E17-4996-A91F-F85D9F4BB541\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/A0D5CAA7-6E17-4996-A91F-F85D9F4BB541",
+        "udid" : "A0D5CAA7-6E17-4996-A91F-F85D9F4BB541",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-10th-generation",
+        "state" : "Shutdown",
+        "name" : "iPad (10th generation)"
+      }
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-16-4" : [
+      {
+        "lastBootedAt" : "2023-09-24T21:16:11Z",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/0EB409C2-9139-4E5A-8D63-B1987196B130\/data",
+        "dataPathSize" : 810958848,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/0EB409C2-9139-4E5A-8D63-B1987196B130",
+        "udid" : "0EB409C2-9139-4E5A-8D63-B1987196B130",
+        "isAvailable" : false,
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "logPathSize" : 176128,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Pro",
+        "state" : "Shutdown",
+        "name" : "iPhone 14 Pro"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/EF27EF63-DBDA-444B-8E44-552D39CC0B7D\/data",
+        "dataPathSize" : 13316096,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/EF27EF63-DBDA-444B-8E44-552D39CC0B7D",
+        "udid" : "EF27EF63-DBDA-444B-8E44-552D39CC0B7D",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Pro-Max",
+        "state" : "Shutdown",
+        "name" : "iPhone 14 Pro Max"
+      },
+      {
+        "lastBootedAt" : "2023-07-21T20:02:04Z",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/1AE91604-E720-4632-AA9F-61D9ECADEA88\/data",
+        "dataPathSize" : 598368256,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/1AE91604-E720-4632-AA9F-61D9ECADEA88",
+        "udid" : "1AE91604-E720-4632-AA9F-61D9ECADEA88",
+        "isAvailable" : false,
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "logPathSize" : 110592,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-14",
+        "state" : "Shutdown",
+        "name" : "iPhone 14"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/4DD85293-2A03-4FD2-B73B-C11FF9DF021D\/data",
+        "dataPathSize" : 13316096,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/4DD85293-2A03-4FD2-B73B-C11FF9DF021D",
+        "udid" : "4DD85293-2A03-4FD2-B73B-C11FF9DF021D",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Plus",
+        "state" : "Shutdown",
+        "name" : "iPhone 14 Plus"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/0B0F4327-77BA-4DAC-99BD-0619C41E9D5D\/data",
+        "dataPathSize" : 13316096,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/0B0F4327-77BA-4DAC-99BD-0619C41E9D5D",
+        "udid" : "0B0F4327-77BA-4DAC-99BD-0619C41E9D5D",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+        "state" : "Shutdown",
+        "name" : "iPhone SE (3rd generation)"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/46946261-6E0C-4CFA-A88B-D7BC68725241\/data",
+        "dataPathSize" : 13316096,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/46946261-6E0C-4CFA-A88B-D7BC68725241",
+        "udid" : "46946261-6E0C-4CFA-A88B-D7BC68725241",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-4th-generation-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro (11-inch) (4th generation)"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/A87A891C-6F60-46A7-B8BE-9322A8B4CD06\/data",
+        "dataPathSize" : 13316096,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/A87A891C-6F60-46A7-B8BE-9322A8B4CD06",
+        "udid" : "A87A891C-6F60-46A7-B8BE-9322A8B4CD06",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-12-9-inch-6th-generation-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro (12.9-inch) (6th generation)"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/D8CFF818-B68F-496B-BCB2-D4BB6D1B45CC\/data",
+        "dataPathSize" : 13316096,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/D8CFF818-B68F-496B-BCB2-D4BB6D1B45CC",
+        "udid" : "D8CFF818-B68F-496B-BCB2-D4BB6D1B45CC",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-10th-generation",
+        "state" : "Shutdown",
+        "name" : "iPad (10th generation)"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/4786A0C1-2B6E-4F1A-9C1A-7A1B9779C7ED\/data",
+        "dataPathSize" : 13316096,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/4786A0C1-2B6E-4F1A-9C1A-7A1B9779C7ED",
+        "udid" : "4786A0C1-2B6E-4F1A-9C1A-7A1B9779C7ED",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-5th-generation",
+        "state" : "Shutdown",
+        "name" : "iPad Air (5th generation)"
+      },
+      {
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/B6FF638C-7244-4943-B2BA-5E5CA053850C\/data",
+        "dataPathSize" : 13316096,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/B6FF638C-7244-4943-B2BA-5E5CA053850C",
+        "udid" : "B6FF638C-7244-4943-B2BA-5E5CA053850C",
+        "isAvailable" : false,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini-6th-generation",
+        "state" : "Shutdown",
+        "name" : "iPad mini (6th generation)"
+      }
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-18-4" : [
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/A33B4829-EE1A-4186-A8FD-FB11077CCF88\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/A33B4829-EE1A-4186-A8FD-FB11077CCF88",
+        "udid" : "A33B4829-EE1A-4186-A8FD-FB11077CCF88",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro",
+        "state" : "Shutdown",
+        "name" : "iPhone 16 Pro"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/64894D59-8F4E-4436-BC95-B84F745DD6D0\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/64894D59-8F4E-4436-BC95-B84F745DD6D0",
+        "udid" : "64894D59-8F4E-4436-BC95-B84F745DD6D0",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro-Max",
+        "state" : "Shutdown",
+        "name" : "iPhone 16 Pro Max"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/7CD16C88-B4F2-4207-9297-795EC010FF7D\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/7CD16C88-B4F2-4207-9297-795EC010FF7D",
+        "udid" : "7CD16C88-B4F2-4207-9297-795EC010FF7D",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16e",
+        "state" : "Shutdown",
+        "name" : "iPhone 16e"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/5B2B1EA8-362F-4400-A651-FD48888EC206\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/5B2B1EA8-362F-4400-A651-FD48888EC206",
+        "udid" : "5B2B1EA8-362F-4400-A651-FD48888EC206",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16",
+        "state" : "Shutdown",
+        "name" : "iPhone 16"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/4576F190-32CC-426C-87C1-86C7E7B41EEB\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/4576F190-32CC-426C-87C1-86C7E7B41EEB",
+        "udid" : "4576F190-32CC-426C-87C1-86C7E7B41EEB",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16-Plus",
+        "state" : "Shutdown",
+        "name" : "iPhone 16 Plus"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/F253EB41-3232-4E82-8F04-6B8A2A987788\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/F253EB41-3232-4E82-8F04-6B8A2A987788",
+        "udid" : "F253EB41-3232-4E82-8F04-6B8A2A987788",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M4-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro 11-inch (M4)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/ACC3A9CA-0E0F-4DB9-BA2F-02AEA26FBD13\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/ACC3A9CA-0E0F-4DB9-BA2F-02AEA26FBD13",
+        "udid" : "ACC3A9CA-0E0F-4DB9-BA2F-02AEA26FBD13",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-13-inch-M4-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro 13-inch (M4)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/08B8FA69-3747-4889-A2FF-8BB8616E2D1A\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/08B8FA69-3747-4889-A2FF-8BB8616E2D1A",
+        "udid" : "08B8FA69-3747-4889-A2FF-8BB8616E2D1A",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini-A17-Pro",
+        "state" : "Shutdown",
+        "name" : "iPad mini (A17 Pro)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/8EB93756-AE08-4339-B773-B8A65FE1424C\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/8EB93756-AE08-4339-B773-B8A65FE1424C",
+        "udid" : "8EB93756-AE08-4339-B773-B8A65FE1424C",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-A16",
+        "state" : "Shutdown",
+        "name" : "iPad (A16)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/7639AF13-65C0-4EF1-A482-FCE20397F151\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/7639AF13-65C0-4EF1-A482-FCE20397F151",
+        "udid" : "7639AF13-65C0-4EF1-A482-FCE20397F151",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-13-inch-M3",
+        "state" : "Shutdown",
+        "name" : "iPad Air 13-inch (M3)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/475694A7-A185-4906-956E-D26FCA4462C6\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/475694A7-A185-4906-956E-D26FCA4462C6",
+        "udid" : "475694A7-A185-4906-956E-D26FCA4462C6",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-11-inch-M3",
+        "state" : "Shutdown",
+        "name" : "iPad Air 11-inch (M3)"
+      }
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-26-2" : [
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/EEF99A97-95E6-4781-9676-BF740562C764\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/EEF99A97-95E6-4781-9676-BF740562C764",
+        "udid" : "EEF99A97-95E6-4781-9676-BF740562C764",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro",
+        "state" : "Shutdown",
+        "name" : "iPhone 17 Pro"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/C6376CB4-11B5-4093-A0DE-546A48DAA5AB\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/C6376CB4-11B5-4093-A0DE-546A48DAA5AB",
+        "udid" : "C6376CB4-11B5-4093-A0DE-546A48DAA5AB",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro-Max",
+        "state" : "Shutdown",
+        "name" : "iPhone 17 Pro Max"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/70251594-5BE2-483A-94EE-48842B14D756\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/70251594-5BE2-483A-94EE-48842B14D756",
+        "udid" : "70251594-5BE2-483A-94EE-48842B14D756",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-Air",
+        "state" : "Shutdown",
+        "name" : "iPhone Air"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/BAC88BFE-5ACE-4E1D-9D8D-F48C95732C6F\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/BAC88BFE-5ACE-4E1D-9D8D-F48C95732C6F",
+        "udid" : "BAC88BFE-5ACE-4E1D-9D8D-F48C95732C6F",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+        "state" : "Shutdown",
+        "name" : "iPhone 17"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/13A1D345-7D61-480E-B559-861B86088D31\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/13A1D345-7D61-480E-B559-861B86088D31",
+        "udid" : "13A1D345-7D61-480E-B559-861B86088D31",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-16e",
+        "state" : "Shutdown",
+        "name" : "iPhone 16e"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/3A60B3DB-2806-4C95-8B8A-08BBAF61A7B5\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/3A60B3DB-2806-4C95-8B8A-08BBAF61A7B5",
+        "udid" : "3A60B3DB-2806-4C95-8B8A-08BBAF61A7B5",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-13-inch-M5-12GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro 13-inch (M5)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/9410B0B4-4EF2-445E-8540-3E0DCE0FAA7B\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/9410B0B4-4EF2-445E-8540-3E0DCE0FAA7B",
+        "udid" : "9410B0B4-4EF2-445E-8540-3E0DCE0FAA7B",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M5-12GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro 11-inch (M5)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/77E1E117-B45C-46C9-8B3A-389580E38891\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/77E1E117-B45C-46C9-8B3A-389580E38891",
+        "udid" : "77E1E117-B45C-46C9-8B3A-389580E38891",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini-A17-Pro",
+        "state" : "Shutdown",
+        "name" : "iPad mini (A17 Pro)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/42AD5A4C-1333-4407-8D78-D393ACEFAB41\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/42AD5A4C-1333-4407-8D78-D393ACEFAB41",
+        "udid" : "42AD5A4C-1333-4407-8D78-D393ACEFAB41",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-A16",
+        "state" : "Shutdown",
+        "name" : "iPad (A16)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/F5EE19C5-BAF9-46E5-B712-822EEA42AE4F\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/F5EE19C5-BAF9-46E5-B712-822EEA42AE4F",
+        "udid" : "F5EE19C5-BAF9-46E5-B712-822EEA42AE4F",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-13-inch-M3",
+        "state" : "Shutdown",
+        "name" : "iPad Air 13-inch (M3)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/59D9EFE0-F35C-4BCE-B6FC-180CA24A38C6\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/59D9EFE0-F35C-4BCE-B6FC-180CA24A38C6",
+        "udid" : "59D9EFE0-F35C-4BCE-B6FC-180CA24A38C6",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-11-inch-M3",
+        "state" : "Shutdown",
+        "name" : "iPad Air 11-inch (M3)"
+      }
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-17-5" : [
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/A8032D4A-188F-4EB9-990B-B26BCCDFFAE3\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/A8032D4A-188F-4EB9-990B-B26BCCDFFAE3",
+        "udid" : "A8032D4A-188F-4EB9-990B-B26BCCDFFAE3",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro",
+        "state" : "Shutdown",
+        "name" : "iPhone 15 Pro"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/9FA650E3-648A-4C5F-9DD2-0ACBDD54F9FD\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/9FA650E3-648A-4C5F-9DD2-0ACBDD54F9FD",
+        "udid" : "9FA650E3-648A-4C5F-9DD2-0ACBDD54F9FD",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro-Max",
+        "state" : "Shutdown",
+        "name" : "iPhone 15 Pro Max"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/FB06341F-1AA9-450E-B43A-C2ED29B63D9F\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/FB06341F-1AA9-450E-B43A-C2ED29B63D9F",
+        "udid" : "FB06341F-1AA9-450E-B43A-C2ED29B63D9F",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15",
+        "state" : "Shutdown",
+        "name" : "iPhone 15"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/D350E560-5FB6-4D2E-B1B6-C699AF3AAAD9\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/D350E560-5FB6-4D2E-B1B6-C699AF3AAAD9",
+        "udid" : "D350E560-5FB6-4D2E-B1B6-C699AF3AAAD9",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Plus",
+        "state" : "Shutdown",
+        "name" : "iPhone 15 Plus"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/99567C9D-8C3D-4C5E-AAD8-A98125044232\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/99567C9D-8C3D-4C5E-AAD8-A98125044232",
+        "udid" : "99567C9D-8C3D-4C5E-AAD8-A98125044232",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+        "state" : "Shutdown",
+        "name" : "iPhone SE (3rd generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/12B8566A-1E49-4D48-B2AE-27E8607E2A2D\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/12B8566A-1E49-4D48-B2AE-27E8607E2A2D",
+        "udid" : "12B8566A-1E49-4D48-B2AE-27E8607E2A2D",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M4-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro 11-inch (M4)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/ADA3AC86-ACD9-41F1-BB74-6ED0C8F7B6C6\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/ADA3AC86-ACD9-41F1-BB74-6ED0C8F7B6C6",
+        "udid" : "ADA3AC86-ACD9-41F1-BB74-6ED0C8F7B6C6",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-13-inch-M4-8GB",
+        "state" : "Shutdown",
+        "name" : "iPad Pro 13-inch (M4)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/5308B250-1D3C-4101-9232-3973F1F1AC63\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/5308B250-1D3C-4101-9232-3973F1F1AC63",
+        "udid" : "5308B250-1D3C-4101-9232-3973F1F1AC63",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-11-inch-M2",
+        "state" : "Shutdown",
+        "name" : "iPad Air 11-inch (M2)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/E1BD8708-A2CE-4A8A-9ED0-836F750525A6\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/E1BD8708-A2CE-4A8A-9ED0-836F750525A6",
+        "udid" : "E1BD8708-A2CE-4A8A-9ED0-836F750525A6",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-13-inch-M2",
+        "state" : "Shutdown",
+        "name" : "iPad Air 13-inch (M2)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/6FCC6717-4ACC-4923-98C2-EFB5FEB2BEE4\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/6FCC6717-4ACC-4923-98C2-EFB5FEB2BEE4",
+        "udid" : "6FCC6717-4ACC-4923-98C2-EFB5FEB2BEE4",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-10th-generation",
+        "state" : "Shutdown",
+        "name" : "iPad (10th generation)"
+      },
+      {
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/CoreSimulator\/Devices\/7671A08B-9AD9-4050-965C-4A2AEC59ED0C\/data",
+        "dataPathSize" : 18337792,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/7671A08B-9AD9-4050-965C-4A2AEC59ED0C",
+        "udid" : "7671A08B-9AD9-4050-965C-4A2AEC59ED0C",
+        "isAvailable" : true,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini-6th-generation",
+        "state" : "Shutdown",
+        "name" : "iPad mini (6th generation)"
+      }
+    ]
+  }
+}

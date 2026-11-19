@@ -1,0 +1,164 @@
+{
+  "00FAF029-0957-4E7E-8905-88E24D6FD5B7" : {
+    "build" : "22E238",
+    "deletable" : true,
+    "identifier" : "00FAF029-0957-4E7E-8905-88E24D6FD5B7",
+    "kind" : "Cryptex Disk Image",
+    "lastUsedAt" : "2025-05-28T10:15:59Z",
+    "mountPath" : "\/Library\/Developer\/CoreSimulator\/Volumes\/iOS_22E238",
+    "parentIdentifier" : "A74B74F7-4AD4-4470-85E4-BA03A85FF9B9",
+    "parentImagePath" : "\/System\/Library\/AssetsV2\/com_apple_MobileAsset_iOSSimulatorRuntime\/6fb1e5fe25ee1c372f7116516e615c556906bd4e.asset\/AssetData\/090-44150-318.dmg",
+    "parentMountPath" : "\/Library\/Developer\/CoreSimulator\/Cryptex\/Images\/bundle\/SimRuntimeBundle-A74B74F7-4AD4-4470-85E4-BA03A85FF9B9",
+    "path" : "\/Library\/Developer\/CoreSimulator\/Cryptex\/Images\/bundle\/SimRuntimeBundle-A74B74F7-4AD4-4470-85E4-BA03A85FF9B9\/Restore\/090-44334-323.dmg",
+    "platformIdentifier" : "com.apple.platform.iphonesimulator",
+    "runtimeBundlePath" : "\/Library\/Developer\/CoreSimulator\/Volumes\/iOS_22E238\/Library\/Developer\/CoreSimulator\/Profiles\/Runtimes\/iOS 18.4.simruntime",
+    "runtimeIdentifier" : "com.apple.CoreSimulator.SimRuntime.iOS-18-4",
+    "signatureState" : "Verified",
+    "sizeBytes" : 8825558354,
+    "state" : "Ready",
+    "supportedArchitectures" : [
+      "x86_64",
+      "arm64"
+    ],
+    "version" : "18.4"
+  },
+  "6BE7E692-17E8-4DA1-A8C2-20795CF79BBE" : {
+    "build" : "21A342",
+    "deletable" : true,
+    "identifier" : "6BE7E692-17E8-4DA1-A8C2-20795CF79BBE",
+    "kind" : "Disk Image",
+    "lastUsedAt" : "2023-12-04T07:15:53Z",
+    "mountPath" : "\/Library\/Developer\/CoreSimulator\/Volumes\/iOS_21A342",
+    "path" : "\/Library\/Developer\/CoreSimulator\/Images\/6BE7E692-17E8-4DA1-A8C2-20795CF79BBE.dmg",
+    "platformIdentifier" : "com.apple.platform.iphonesimulator",
+    "runtimeBundlePath" : "\/Library\/Developer\/CoreSimulator\/Volumes\/iOS_21A342\/Library\/Developer\/CoreSimulator\/Profiles\/Runtimes\/iOS 17.0.simruntime",
+    "runtimeIdentifier" : "com.apple.CoreSimulator.SimRuntime.iOS-17-0",
+    "signatureState" : "Verified",
+    "sizeBytes" : 7210691623,
+    "state" : "Ready",
+    "supportedArchitectures" : [
+      "x86_64",
+      "arm64"
+    ],
+    "version" : "17.0.1"
+  },
+  "79F4E297-8B70-42A5-A9B6-7F7A159D982F" : {
+    "build" : "22D8075",
+    "deletable" : true,
+    "identifier" : "79F4E297-8B70-42A5-A9B6-7F7A159D982F",
+    "kind" : "Cryptex Disk Image",
+    "mountPath" : "\/Library\/Developer\/CoreSimulator\/Volumes\/iOS_22D8075",
+    "parentIdentifier" : "C2CDFD69-81DB-4110-A97E-DD466370E08F",
+    "parentImagePath" : "\/System\/Library\/AssetsV2\/com_apple_MobileAsset_iOSSimulatorRuntime\/fb8de9a3438213a1dda310a6ab5eac9ddf8db858.asset\/AssetData\/044-77235-048.dmg",
+    "parentMountPath" : "\/Library\/Developer\/CoreSimulator\/Cryptex\/Images\/bundle\/SimRuntimeBundle-C2CDFD69-81DB-4110-A97E-DD466370E08F",
+    "path" : "\/Library\/Developer\/CoreSimulator\/Cryptex\/Images\/bundle\/SimRuntimeBundle-C2CDFD69-81DB-4110-A97E-DD466370E08F\/Restore\/044-77188-048.dmg",
+    "platformIdentifier" : "com.apple.platform.iphonesimulator",
+    "runtimeBundlePath" : "\/Library\/Developer\/CoreSimulator\/Volumes\/iOS_22D8075\/Library\/Developer\/CoreSimulator\/Profiles\/Runtimes\/iOS 18.3.simruntime",
+    "runtimeIdentifier" : "com.apple.CoreSimulator.SimRuntime.iOS-18-3",
+    "signatureState" : "Verified",
+    "sizeBytes" : 8708125252,
+    "state" : "Ready",
+    "supportedArchitectures" : [
+      "x86_64",
+      "arm64"
+    ],
+    "version" : "18.3.1"
+  },
+  "6490AEAD-3D4D-40DE-8001-D7F93CC27E5D" : {
+    "build" : "21C62",
+    "deletable" : true,
+    "identifier" : "6490AEAD-3D4D-40DE-8001-D7F93CC27E5D",
+    "kind" : "Disk Image",
+    "lastUsedAt" : "2024-02-24T07:50:33Z",
+    "mountPath" : "\/Library\/Developer\/CoreSimulator\/Volumes\/iOS_21C62",
+    "path" : "\/Library\/Developer\/CoreSimulator\/Images\/6490AEAD-3D4D-40DE-8001-D7F93CC27E5D.dmg",
+    "platformIdentifier" : "com.apple.platform.iphonesimulator",
+    "runtimeBundlePath" : "\/Library\/Developer\/CoreSimulator\/Volumes\/iOS_21C62\/Library\/Developer\/CoreSimulator\/Profiles\/Runtimes\/iOS 17.2.simruntime",
+    "runtimeIdentifier" : "com.apple.CoreSimulator.SimRuntime.iOS-17-2",
+    "signatureState" : "Verified",
+    "sizeBytes" : 7351124481,
+    "state" : "Ready",
+    "supportedArchitectures" : [
+      "x86_64",
+      "arm64"
+    ],
+    "version" : "17.2"
+  },
+  "16863EB6-20F6-43E2-A0D0-3646A507BD42" : {
+    "build" : "21F79",
+    "deletable" : true,
+    "identifier" : "16863EB6-20F6-43E2-A0D0-3646A507BD42",
+    "kind" : "Disk Image",
+    "mountPath" : "\/Library\/Developer\/CoreSimulator\/Volumes\/iOS_21F79",
+    "path" : "\/Library\/Developer\/CoreSimulator\/Images\/16863EB6-20F6-43E2-A0D0-3646A507BD42.dmg",
+    "platformIdentifier" : "com.apple.platform.iphonesimulator",
+    "runtimeBundlePath" : "\/Library\/Developer\/CoreSimulator\/Volumes\/iOS_21F79\/Library\/Developer\/CoreSimulator\/Profiles\/Runtimes\/iOS 17.5.simruntime",
+    "runtimeIdentifier" : "com.apple.CoreSimulator.SimRuntime.iOS-17-5",
+    "signatureState" : "Verified",
+    "sizeBytes" : 7336630623,
+    "state" : "Ready",
+    "supportedArchitectures" : [
+      "x86_64",
+      "arm64"
+    ],
+    "version" : "17.5"
+  },
+  "178757CA-BA71-44B0-BDFD-C7BB36335306" : {
+    "build" : "21A328",
+    "deletable" : true,
+    "identifier" : "178757CA-BA71-44B0-BDFD-C7BB36335306",
+    "kind" : "Disk Image",
+    "lastUsedAt" : "2023-11-20T10:09:27Z",
+    "mountPath" : "\/Library\/Developer\/CoreSimulator\/Volumes\/iOS_21A328",
+    "path" : "\/Library\/Developer\/CoreSimulator\/Images\/178757CA-BA71-44B0-BDFD-C7BB36335306.dmg",
+    "platformIdentifier" : "com.apple.platform.iphonesimulator",
+    "runtimeBundlePath" : "\/Library\/Developer\/CoreSimulator\/Volumes\/iOS_21A328\/Library\/Developer\/CoreSimulator\/Profiles\/Runtimes\/iOS 17.0.simruntime",
+    "runtimeIdentifier" : "com.apple.CoreSimulator.SimRuntime.iOS-17-0",
+    "signatureState" : "Verified",
+    "sizeBytes" : 7559529352,
+    "state" : "Ready",
+    "supportedArchitectures" : [
+      "x86_64",
+      "arm64"
+    ],
+    "version" : "17.0"
+  },
+  "31659737-D534-4F0A-9F41-0323F249FFF6" : {
+    "build" : "23C54",
+    "deletable" : true,
+    "identifier" : "31659737-D534-4F0A-9F41-0323F249FFF6",
+    "kind" : "Patchable Cryptex Disk Image",
+    "mountPath" : "\/Library\/Developer\/CoreSimulator\/Volumes\/iOS_23C54",
+    "parentMountPath" : "\/System\/Library\/AssetsV2\/com_apple_MobileAsset_iOSSimulatorRuntime\/e4478b4b9014ff28fe3c265daca488f55a284f4c.asset\/AssetData",
+    "path" : "\/System\/Library\/AssetsV2\/com_apple_MobileAsset_iOSSimulatorRuntime\/e4478b4b9014ff28fe3c265daca488f55a284f4c.asset\/AssetData\/Restore\/043-87504-067.dmg",
+    "platformIdentifier" : "com.apple.platform.iphonesimulator",
+    "runtimeBundlePath" : "\/Library\/Developer\/CoreSimulator\/Volumes\/iOS_23C54\/Library\/Developer\/CoreSimulator\/Profiles\/Runtimes\/iOS 26.2.simruntime",
+    "runtimeIdentifier" : "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
+    "signatureState" : "Verified",
+    "sizeBytes" : 8381044573,
+    "state" : "Ready",
+    "supportedArchitectures" : [
+      "arm64"
+    ],
+    "version" : "26.2"
+  },
+  "C3550A64-701D-470B-B708-3B39EFFB374E" : {
+    "build" : "21E213",
+    "deletable" : true,
+    "identifier" : "C3550A64-701D-470B-B708-3B39EFFB374E",
+    "kind" : "Disk Image",
+    "mountPath" : "\/Library\/Developer\/CoreSimulator\/Volumes\/iOS_21E213",
+    "path" : "\/Library\/Developer\/CoreSimulator\/Images\/C3550A64-701D-470B-B708-3B39EFFB374E.dmg",
+    "platformIdentifier" : "com.apple.platform.iphonesimulator",
+    "runtimeBundlePath" : "\/Library\/Developer\/CoreSimulator\/Volumes\/iOS_21E213\/Library\/Developer\/CoreSimulator\/Profiles\/Runtimes\/iOS 17.4.simruntime",
+    "runtimeIdentifier" : "com.apple.CoreSimulator.SimRuntime.iOS-17-4",
+    "signatureState" : "Verified",
+    "sizeBytes" : 7229057541,
+    "state" : "Ready",
+    "supportedArchitectures" : [
+      "x86_64",
+      "arm64"
+    ],
+    "version" : "17.4"
+  }
+}

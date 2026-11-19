@@ -1,0 +1,89 @@
+{
+  "devices" : {
+    "com.apple.CoreSimulator.SimRuntime.iOS-17-2" : [
+
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-17-0" : [
+      {
+        "lastBootedAt" : "2023-10-05T17:24:56Z",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/Xcode\/UserData\/Previews\/Simulator Devices\/719A4FA4-4A07-4BA5-A181-72A613C564C9\/data",
+        "dataPathSize" : 2498306048,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/719A4FA4-4A07-4BA5-A181-72A613C564C9",
+        "udid" : "719A4FA4-4A07-4BA5-A181-72A613C564C9",
+        "isAvailable" : true,
+        "logPathSize" : 151552,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro",
+        "state" : "Shutdown",
+        "name" : "iPhone 15 Pro"
+      },
+      {
+        "lastBootedAt" : "2023-09-18T01:51:09Z",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/Xcode\/UserData\/Previews\/Simulator Devices\/F2847DD6-A9BE-4065-B2EC-6D26DD6EC6C8\/data",
+        "dataPathSize" : 2015494144,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/F2847DD6-A9BE-4065-B2EC-6D26DD6EC6C8",
+        "udid" : "F2847DD6-A9BE-4065-B2EC-6D26DD6EC6C8",
+        "isAvailable" : true,
+        "logPathSize" : 184320,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Pro-Max",
+        "state" : "Shutdown",
+        "name" : "iPhone 14 Pro Max"
+      }
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-18-3" : [
+
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-17-4" : [
+
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-16-4" : [
+      {
+        "lastBootedAt" : "2023-07-31T18:33:55Z",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/Xcode\/UserData\/Previews\/Simulator Devices\/3B9F4918-95C8-404D-9896-EC8F4D1E9629\/data",
+        "dataPathSize" : 2031788032,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/3B9F4918-95C8-404D-9896-EC8F4D1E9629",
+        "udid" : "3B9F4918-95C8-404D-9896-EC8F4D1E9629",
+        "isAvailable" : false,
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "logPathSize" : 765952,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Pro",
+        "state" : "Shutdown",
+        "name" : "iPhone 14 Pro"
+      },
+      {
+        "lastBootedAt" : "2023-06-27T06:33:43Z",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/Xcode\/UserData\/Previews\/Simulator Devices\/35F31F4E-C522-4F80-BF18-1844ACD6299E\/data",
+        "dataPathSize" : 689889280,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/35F31F4E-C522-4F80-BF18-1844ACD6299E",
+        "udid" : "35F31F4E-C522-4F80-BF18-1844ACD6299E",
+        "isAvailable" : false,
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "logPathSize" : 110592,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-14-Pro-Max",
+        "state" : "Shutdown",
+        "name" : "iPhone 14 Pro Max"
+      },
+      {
+        "lastBootedAt" : "2023-06-19T17:30:34Z",
+        "dataPath" : "\/Users\/tester\/Library\/Developer\/Xcode\/UserData\/Previews\/Simulator Devices\/50CC525A-D8F0-45E9-BA05-A6727C739F3C\/data",
+        "dataPathSize" : 844599296,
+        "logPath" : "\/Users\/tester\/Library\/Logs\/CoreSimulator\/50CC525A-D8F0-45E9-BA05-A6727C739F3C",
+        "udid" : "50CC525A-D8F0-45E9-BA05-A6727C739F3C",
+        "isAvailable" : false,
+        "availabilityError" : "runtime profile not found using \"System\" match policy",
+        "logPathSize" : 278528,
+        "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-14",
+        "state" : "Shutdown",
+        "name" : "iPhone 14"
+      }
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-18-4" : [
+
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-26-2" : [
+
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-17-5" : [
+
+    ]
+  }
+}

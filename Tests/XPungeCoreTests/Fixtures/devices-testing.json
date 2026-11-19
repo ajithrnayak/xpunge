@@ -1,0 +1,25 @@
+{
+  "devices" : {
+    "com.apple.CoreSimulator.SimRuntime.iOS-17-2" : [
+
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-17-0" : [
+
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-18-3" : [
+
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-17-4" : [
+
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-18-4" : [
+
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-26-2" : [
+
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-17-5" : [
+
+    ]
+  }
+}
