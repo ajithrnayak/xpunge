@@ -35,7 +35,13 @@ Preview a clean with `xpunge clean --dry-run`.
 
 ## Install
 
-Download the universal binary (Apple silicon and Intel, macOS 13 or later):
+With Homebrew:
+
+```sh
+brew install ajithrnayak/tap/xpunge
+```
+
+Or download the universal binary yourself (Apple silicon and Intel, macOS 13 or later):
 
 ```sh
 curl -LO https://github.com/ajithrnayak/xpunge/releases/download/v0.1.0/xpunge-0.1.0-macos-universal.tar.gz
@@ -55,8 +61,6 @@ cd xpunge
 swift build -c release
 cp .build/release/xpunge /usr/local/bin/   # or anywhere on your PATH
 ```
-
-A Homebrew formula will follow the first release.
 
 ## Usage
 
