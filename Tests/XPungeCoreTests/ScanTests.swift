@@ -15,6 +15,30 @@ import Testing
         #expect(current.note?.contains("used by the selected Xcode") == true)
     }
 
+    @Test func xcode27OutputDecodes() throws {
+        let home = try TempHome()
+        let simctl = SimctlQueries(runner: FakeSimctl(home: home.url, xcode: "xcode27"))
+        let runtimes = try simctl.runtimes()
+        #expect(runtimes.count == 10)
+        #expect(runtimes.allSatisfy { $0.sizeBytes > 0 })
+        #expect(simctl.runtimeUsers().byBuild["24B8117"] == [RuntimeUsers.selected])
+        let devices = try simctl.devices(in: .standard)
+        #expect(devices.count == 118)
+        #expect(devices.allSatisfy { !$0.udid.isEmpty && !$0.runtime.isEmpty })
+    }
+
+    @Test func scanShowsInstallDateWhenThereIsNoRecordedUse() throws {
+        let home = try TempHome()
+        let path = "/Library/Developer/CoreSimulator/Images/16863EB6-20F6-43E2-A0D0-3646A507BD42.dmg"
+        let fake = FakeSimctl(installDates: [path: fixtureDate.addingTimeInterval(-86_400)])
+        let report = try #require(Scanner(env: home.env, simctl: SimctlQueries(runner: fake), now: fixtureDate).scan([.runtimes]).first)
+        let runtime = try #require(report.details.first { $0.name.contains("21F79") })
+        // The date is shown in local time, so only its month is fixed here.
+        let note = try #require(runtime.note)
+        #expect(note.hasPrefix("no recorded use, installed 2026-11-1"))
+        #expect(note.hasSuffix(", 1 day ago"))
+    }
+
     @Test func runtimesWithoutXcodeAreUnmeasuredNotGuessed() throws {
         let home = try TempHome()
         let report = try #require(Scanner(env: home.env, simctl: nil).scan([.runtimes]).first)
@@ -67,6 +91,28 @@ import Testing
         #expect(XcodeLocator.locate(variables: [:], selectedPath: clt.path, applications: home.env.applications) == nil)
         #expect(XcodeLocator.locate(variables: ["DEVELOPER_DIR": developer.path], selectedPath: clt.path,
                                     applications: home.env.applications)?.path == developer.path)
+    }
+
+    @Test func scanNamesTheOtherXcodeThatUsesARuntime() throws {
+        let home = try TempHome()
+        let simctl = SimctlQueries(runner: FakeSimctl(), otherXcodes: [("Xcode-18.4.app", FakeOtherXcode(chosenBuilds: ["22E238"]))])
+        let report = try #require(Scanner(env: home.env, simctl: simctl, now: fixtureDate).scan([.runtimes]).first)
+        let runtime = try #require(report.details.first { $0.name.contains("22E238") })
+        #expect(runtime.note?.hasSuffix("used by Xcode-18.4.app") == true)
+    }
+
+    @Test func otherInstalledXcodesExcludeTheSelectedOne() throws {
+        let home = try TempHome()
+        for name in ["Xcode-26.2.0.app", "Xcode-27.2.0.app"] {
+            let simctl = try home.file("Applications/\(name)/Contents/Developer/usr/bin/simctl")
+            try FileManager.default.setAttributes([.posixPermissions: 0o755], ofItemAtPath: simctl.path)
+        }
+        try home.folder("Applications/Xcode-beta.app")  // no simctl: not a usable Xcode
+        try home.folder("Applications/Xcodes.app")
+        let selected = home.url.appendingPathComponent("Applications/Xcode-27.2.0.app/Contents/Developer")
+
+        let others = XcodeLocator.otherInstalled(applications: home.env.applications, excluding: selected)
+        #expect(others.map(\.lastPathComponent) == ["Xcode-26.2.0.app"])
     }
 
     @Test func defaultPolicyCoversExactlyTheAgreedCategories() {

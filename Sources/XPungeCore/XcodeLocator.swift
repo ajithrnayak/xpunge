@@ -26,6 +26,15 @@ public enum XcodeLocator {
         return candidates.first(where: hasSimctl)
     }
 
+    /// Every installed Xcode app with simctl, except the one at `excluding` (a developer directory).
+    public static func otherInstalled(applications: URL, excluding developerDir: URL?) -> [URL] {
+        let excluded = developerDir?.resolvingSymlinksInPath().standardizedFileURL.path
+        return Catalog.xcodeApps(in: applications).filter { app in
+            let dir = app.appendingPathComponent("Contents/Developer", isDirectory: true)
+            return hasSimctl(dir) && dir.resolvingSymlinksInPath().standardizedFileURL.path != excluded
+        }
+    }
+
     /// The developer directory xcode-select points at, if any.
     public static func xcodeSelectPath() -> String? {
         guard let result = try? ProcessRunner.run("/usr/bin/xcode-select", ["-p"]), result.status == 0 else {

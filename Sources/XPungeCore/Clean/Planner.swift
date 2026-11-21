@@ -88,8 +88,8 @@ public struct Planner: Sendable {
         case .runtimes:
             guard let simctl else { throw PlanError.needsXcode(.runtimes) }
             let runtimes = try simctl.runtimes()
-            let chosen = (try? simctl.chosenRuntimeBuilds()) ?? []
-            for runtime in try RuntimeSelection.select(from: runtimes, chosenBuilds: chosen, options: options, notes: &plan.notes) {
+            let users = simctl.runtimeUsers()
+            for runtime in try RuntimeSelection.select(from: runtimes, users: users, options: options, notes: &plan.notes) {
                 plan.actions.append(Action(
                     category: .runtimes, kind: .simctl(["runtime", "delete", runtime.identifier]),
                     label: "\(runtime.displayName) (\(runtime.build))", bytes: runtime.sizeBytes
@@ -103,7 +103,7 @@ public struct Planner: Sendable {
 }
 
 enum RuntimeSelection {
-    static func select(from runtimes: [Runtime], chosenBuilds: Set<String>, options: CleanOptions,
+    static func select(from runtimes: [Runtime], users: RuntimeUsers, options: CleanOptions,
                        notes: inout [String]) throws -> [Runtime] {
         var selected: [Runtime] = []
 
@@ -117,10 +117,13 @@ enum RuntimeSelection {
         }
 
         if let days = options.notUsedSinceDays {
+            for name in users.unchecked {
+                notes.append("Couldn't check which runtimes \(name) uses, so its runtimes may be selected. Check the list before cleaning.")
+            }
             let cutoff = options.now.addingTimeInterval(-Double(days) * 86_400)
-            for runtime in runtimes where (runtime.lastUsedAt ?? .distantPast) < cutoff {
-                if chosenBuilds.contains(runtime.build) {
-                    notes.append("Keeping \(runtime.displayName) (\(runtime.build)): the selected Xcode uses it. Name it with --runtime to remove it anyway.")
+            for runtime in runtimes where (runtime.lastActivity ?? .distantPast) < cutoff {
+                if let user = users.describe(runtime.build) {
+                    notes.append("Keeping \(runtime.displayName) (\(runtime.build)): \(user) \(users.byBuild[runtime.build]!.count > 1 ? "use" : "uses") it. Name it with --runtime to remove it anyway.")
                     continue
                 }
                 selected.append(runtime)

@@ -11,7 +11,7 @@ struct XPunge: ParsableCommand {
         Start with `xpunge scan`, then preview with `xpunge clean --dry-run`.
         Archives, device support, runtimes and Xcodes downloads are only cleaned when named.
         """,
-        version: "0.1.0",
+        version: "0.1.1",
         subcommands: [Scan.self, Clean.self],
         defaultSubcommand: Scan.self
     )
@@ -23,7 +23,15 @@ extension CategoryID: ExpressibleByArgument {}
 struct Context {
     let env: Environment
     let simctl: Simctl?
-    var queries: SimctlQueries? { simctl.map { SimctlQueries(runner: $0) } }
+    /// Other installed Xcode apps, whose runtimes are protected too.
+    let otherXcodes: [URL]
+    var queries: SimctlQueries? {
+        simctl.map { selected in
+            SimctlQueries(runner: selected, otherXcodes: otherXcodes.map { app in
+                (app.lastPathComponent, Simctl(developerDir: app.appendingPathComponent("Contents/Developer", isDirectory: true)))
+            })
+        }
+    }
 
     static func current() -> Context {
         let env = Environment.current()
@@ -32,7 +40,10 @@ struct Context {
             selectedPath: XcodeLocator.xcodeSelectPath(),
             applications: env.applications
         )
-        return Context(env: env, simctl: developerDir.map(Simctl.init(developerDir:)))
+        return Context(
+            env: env, simctl: developerDir.map(Simctl.init(developerDir:)),
+            otherXcodes: XcodeLocator.otherInstalled(applications: env.applications, excluding: developerDir)
+        )
     }
 }
 

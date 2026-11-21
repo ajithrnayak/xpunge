@@ -31,7 +31,7 @@ Cleaned only when named: runtimes (62.6 GB), xcodes-downloads (3.4 GB).
 Preview a clean with `xpunge clean --dry-run`.
 ```
 
-> **Status: pre-release (v0.1.0).** Tested on Xcode 26.2 only; Xcode 27 support is still being verified. Start with `xpunge clean --dry-run`, and please [report anything odd](https://github.com/ajithrnayak/xpunge/issues).
+> **Status: early (v0.1.1).** Tested on Xcode 26.2 and 27.2. Start with `xpunge clean --dry-run`, and please [report anything odd](https://github.com/ajithrnayak/xpunge/issues).
 
 ## Install
 
@@ -44,10 +44,10 @@ brew install ajithrnayak/tap/xpunge
 Or download the universal binary yourself (Apple silicon and Intel, macOS 13 or later):
 
 ```sh
-curl -LO https://github.com/ajithrnayak/xpunge/releases/download/v0.1.0/xpunge-0.1.0-macos-universal.tar.gz
-curl -LO https://github.com/ajithrnayak/xpunge/releases/download/v0.1.0/xpunge-0.1.0-macos-universal.tar.gz.sha256
-shasum -a 256 -c xpunge-0.1.0-macos-universal.tar.gz.sha256
-tar -xzf xpunge-0.1.0-macos-universal.tar.gz
+curl -LO https://github.com/ajithrnayak/xpunge/releases/download/v0.1.1/xpunge-0.1.1-macos-universal.tar.gz
+curl -LO https://github.com/ajithrnayak/xpunge/releases/download/v0.1.1/xpunge-0.1.1-macos-universal.tar.gz.sha256
+shasum -a 256 -c xpunge-0.1.1-macos-universal.tar.gz.sha256
+tar -xzf xpunge-0.1.1-macos-universal.tar.gz
 mv xpunge /usr/local/bin/   # or anywhere on your PATH
 ```
 
@@ -110,7 +110,7 @@ In a terminal, success messages open with a random interjection and emoji ("Wooh
 
 - **Nothing outside a known category is touched.** `clean` only removes items directly inside a category's own folders, inside your home folder. Every action is checked twice: once when the plan is built and again just before it runs.
 - **Simulator data goes through `simctl`.** Runtimes are system-managed disk images; deleting their folders by hand breaks things. Runtime sizes come from `simctl runtime list`, never from `du`, because `du` can both over- and undercount them.
-- **Never `all`.** `xpunge` never passes `all` to `simctl`. `--not-used-since` keeps the runtimes your selected Xcode uses unless you name them.
+- **Never `all`.** `xpunge` never passes `all` to `simctl`. `--not-used-since` keeps the runtimes any installed Xcode in `/Applications` uses (asked through each Xcode's own `simctl runtime match list`) unless you name them. If one can't be checked, the plan says so. A runtime's age is its last use, or its install date if that's later, because Xcode 26 and later leave the last-use date empty for most runtimes.
 - **No sudo.** It never needs it and never asks for it.
 - **Finds Xcode itself.** `xcode-select` often points at the Command Line Tools, which have no `simctl`. `xpunge` uses `DEVELOPER_DIR` first, then `xcode-select`, then the newest `/Applications/Xcode*.app`. If it can't find a full Xcode, the `simctl` categories are skipped and only reported.
 
@@ -123,7 +123,7 @@ swift test
 
 If `xcode-select` points at the Command Line Tools, point the build at a full Xcode with `DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer swift test`.
 
-The tests never touch your real `~/Library` or simulators. Each one builds a fixture tree in a temp folder, and `simctl` is replaced by a fake that serves JSON captured from a real Xcode 26.2 install (in `Tests/XPungeCoreTests/Fixtures`).
+The tests never touch your real `~/Library` or simulators. Each one builds a fixture tree in a temp folder, and `simctl` is replaced by a fake that serves JSON captured from real Xcode 26.2 and 27.2 installs (in `Tests/XPungeCoreTests/Fixtures`).
 
 All logic lives in `XPungeCore`. The `xpunge` target only parses arguments and prints. `clean` runs in three stages: the `Planner` decides what to remove, the `Guard` checks each action, and the `Executor` runs them.
 

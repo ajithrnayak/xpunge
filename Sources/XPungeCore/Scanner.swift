@@ -108,10 +108,10 @@ public struct Scanner: Sendable {
         }
         do {
             let runtimes = try simctl.runtimes()
-            let chosen = (try? simctl.chosenRuntimeBuilds()) ?? []
+            let users = simctl.runtimeUsers()
             let details = runtimes.map { runtime in
-                var notes = [RuntimeAge.describe(runtime.lastUsedAt, now: now)]
-                if chosen.contains(runtime.build) { notes.append("used by the selected Xcode") }
+                var notes = [RuntimeAge.describe(runtime, now: now)]
+                if let user = users.describe(runtime.build) { notes.append("used by \(user)") }
                 if !runtime.deletable { notes.append("simctl cannot delete it") }
                 return Detail(name: "\(runtime.displayName) (\(runtime.build))", bytes: runtime.sizeBytes,
                               note: notes.joined(separator: ", "))
@@ -144,12 +144,18 @@ enum DeviceSize {
 }
 
 enum RuntimeAge {
-    static func describe(_ lastUsed: Date?, now: Date) -> String {
-        guard let lastUsed else { return "no recorded use" }
-        let days = Int(now.timeIntervalSince(lastUsed) / 86_400)
+    static func describe(_ runtime: Runtime, now: Date) -> String {
+        if let lastUsed = runtime.lastUsedAt { return "last used \(ago(lastUsed, now: now))" }
+        if let installed = runtime.installedAt { return "no recorded use, installed \(ago(installed, now: now))" }
+        return "no recorded use"
+    }
+
+    static func ago(_ date: Date, now: Date) -> String {
+        let days = max(0, Int(now.timeIntervalSince(date) / 86_400))
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withFullDate]
-        return "last used \(formatter.string(from: lastUsed)), \(days) days ago"
+        formatter.timeZone = .current
+        return "\(formatter.string(from: date)), \(days) day\(days == 1 ? "" : "s") ago"
     }
 }
 

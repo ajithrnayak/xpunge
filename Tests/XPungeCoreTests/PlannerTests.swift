@@ -62,6 +62,49 @@ import Testing
         }
     }
 
+    @Test func notUsedSinceKeepsRuntimesOtherInstalledXcodesUse() throws {
+        let home = try TempHome()
+        let simctl = SimctlQueries(runner: FakeSimctl(), otherXcodes: [
+            ("Xcode-18.4.app", FakeOtherXcode(chosenBuilds: ["22E238"])),
+            ("Xcode-26.2.app", FakeOtherXcode(chosenBuilds: ["23C54"])),
+        ])
+        let plan = try Planner(env: home.env, simctl: simctl)
+            .plan(named: [.runtimes], options: CleanOptions(notUsedSinceDays: 365, now: fixtureDate))
+
+        let labels = plan.actions.map(\.label)
+        #expect(!labels.contains { $0.contains("22E238") || $0.contains("23C54") })
+        #expect(labels.count == 6)
+        #expect(plan.notes.contains("Keeping iOS 18.4 (22E238): Xcode-18.4.app uses it. Name it with --runtime to remove it anyway."))
+        #expect(plan.notes.contains { $0.contains("23C54") && $0.contains("the selected Xcode and Xcode-26.2.app use it") })
+    }
+
+    @Test func notUsedSinceCountsARecentInstallAsActivity() throws {
+        let home = try TempHome()
+        // iOS 18.3.1 has no recorded use; pretend it was installed last week.
+        let path = "/Library/Developer/CoreSimulator/Cryptex/Images/bundle/SimRuntimeBundle-C2CDFD69-81DB-4110-A97E-DD466370E08F/Restore/044-77188-048.dmg"
+        let fake = FakeSimctl(installDates: [path: fixtureDate.addingTimeInterval(-7 * 86_400)])
+        let plan = try Planner(env: home.env, simctl: SimctlQueries(runner: fake))
+            .plan(named: [.runtimes], options: CleanOptions(notUsedSinceDays: 180, now: fixtureDate))
+        #expect(!plan.actions.contains { $0.label.contains("22D8075") })
+        #expect(plan.actions.contains { $0.label.contains("21F79") })  // no use and no install date: still selected
+    }
+
+    @Test func notUsedSinceWarnsWhenAnotherXcodeCannotBeChecked() throws {
+        let home = try TempHome()
+        let simctl = SimctlQueries(runner: FakeSimctl(), otherXcodes: [("Xcode-14.3.app", FakeOtherXcode(chosenBuilds: nil))])
+        let plan = try Planner(env: home.env, simctl: simctl)
+            .plan(named: [.runtimes], options: CleanOptions(notUsedSinceDays: 365, now: fixtureDate))
+        #expect(plan.notes.contains { $0.hasPrefix("Couldn't check which runtimes Xcode-14.3.app uses") })
+    }
+
+    @Test func namedRuntimeIsRemovedEvenIfAnotherXcodeUsesIt() throws {
+        let home = try TempHome()
+        let simctl = SimctlQueries(runner: FakeSimctl(), otherXcodes: [("Xcode-18.4.app", FakeOtherXcode(chosenBuilds: ["22E238"]))])
+        let plan = try Planner(env: home.env, simctl: simctl)
+            .plan(named: [.runtimes], options: CleanOptions(runtimes: ["22E238"]))
+        #expect(plan.actions.map(\.label) == ["iOS 18.4 (22E238)"])
+    }
+
     @Test func notUsedSinceKeepsTheSelectedXcodesRuntime() throws {
         let home = try TempHome()
         let planner = Planner(env: home.env, simctl: SimctlQueries(runner: FakeSimctl()))
