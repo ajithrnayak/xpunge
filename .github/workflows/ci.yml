@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    # Standard macOS runners are free for public repositories.
+    runs-on: macos-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+
+      - name: Build
+        run: swift build
+
+      # The tests use a fake simctl and temp folders, so they never touch the runner's
+      # real simulators or ~/Library.
+      - name: Test
+        run: swift test
+
+      # The release is a universal binary; make sure both architectures still build.
+      - name: Build universal release
+        run: |
+          swift build -c release --arch arm64 --arch x86_64
+          bin="$(swift build -c release --arch arm64 --arch x86_64 --show-bin-path)/xpunge"
+          lipo -archs "$bin"
+          "$bin" --version

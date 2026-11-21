@@ -1,5 +1,7 @@
 # xpunge
 
+[![CI](https://github.com/ajithrnayak/xpunge/actions/workflows/ci.yml/badge.svg)](https://github.com/ajithrnayak/xpunge/actions/workflows/ci.yml)
+
 See how much disk space Xcode uses, and reclaim it safely.
 
 Xcode quietly fills tens of gigabytes: simulator runtimes, DerivedData, package caches, Previews devices, device support files. `xpunge` measures all of it and removes what's safe to remove. For anything Apple manages through `simctl`, it goes through `simctl` instead of deleting folders by hand.
