@@ -12,8 +12,8 @@ struct Clean: ParsableCommand {
         Examples:
           xpunge clean --dry-run
           xpunge clean derived-data swiftpm-cache
-          xpunge clean runtimes --not-used-since 180
-          xpunge clean runtimes --runtime 21A328
+          xpunge clean simulator-runtimes --not-used-since 180
+          xpunge clean simulator-runtimes --runtime 21A328
           xpunge clean device-support --keep-latest 2
         """
     )
@@ -30,10 +30,10 @@ struct Clean: ParsableCommand {
     @Flag(help: "Print JSON. Needs --dry-run or --yes.")
     var json = false
 
-    @Option(name: .customLong("runtime"), help: "Runtime build or UUID to delete (repeatable). Needs the runtimes category.")
+    @Option(name: .customLong("runtime"), help: "Simulator runtime build or UUID to delete (repeatable). Needs the simulator-runtimes category.")
     var runtimes: [String] = []
 
-    @Option(help: "Delete runtimes with no use in this many days. Runtimes with no recorded use count as unused; the selected Xcode's runtimes are kept.")
+    @Option(help: "Delete simulator runtimes with no use in this many days. Runtimes with no recorded use count as unused; runtimes an installed Xcode uses are kept.")
     var notUsedSince: Int?
 
     @Option(help: "Keep this many newest versions in each DeviceSupport folder.")
@@ -46,6 +46,7 @@ struct Clean: ParsableCommand {
     }
 
     func run() throws {
+        noteRenamedCategories()
         let context = Context.current()
         let options = CleanOptions(runtimes: runtimes, notUsedSinceDays: notUsedSince, keepLatest: keepLatest)
 

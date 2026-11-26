@@ -9,7 +9,7 @@ struct XPunge: ParsableCommand {
         abstract: "See how much disk space Xcode uses, and reclaim it safely.",
         discussion: """
         Start with `xpunge scan`, then preview with `xpunge clean --dry-run`.
-        Archives, device support, runtimes and Xcodes downloads are only cleaned when named.
+        Archives, device support, simulator runtimes and Xcodes downloads are only cleaned when named.
         """,
         version: "0.1.1",
         subcommands: [Scan.self, Clean.self],
@@ -17,7 +17,20 @@ struct XPunge: ParsableCommand {
     )
 }
 
-extension CategoryID: ExpressibleByArgument {}
+extension CategoryID: ExpressibleByArgument {
+    public init?(argument: String) {
+        self.init(name: argument)
+    }
+}
+
+/// Points out old category names on stderr, so scripts get updated before 1.0 drops them.
+func noteRenamedCategories() {
+    for argument in CommandLine.arguments.dropFirst() {
+        if let id = CategoryID.aliases[argument] {
+            printError("`\(argument)` is now `\(id.rawValue)`. The old name works until 1.0.")
+        }
+    }
+}
 
 /// The real environment plus a simctl runner, if a full Xcode can be found.
 struct Context {

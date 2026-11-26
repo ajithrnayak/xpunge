@@ -115,6 +115,21 @@ import Testing
         #expect(others.map(\.lastPathComponent) == ["Xcode-26.2.0.app"])
     }
 
+    @Test func runtimesCategoryUsesApplesNameAndKeepsTheOldOne() {
+        #expect(CategoryID.runtimes.rawValue == "simulator-runtimes")
+        #expect(CategoryID(name: "simulator-runtimes") == .runtimes)
+        #expect(CategoryID(name: "runtimes") == .runtimes)
+        #expect(CategoryID(name: "runtime") == nil)
+        #expect(CategoryID(rawValue: "runtimes") == nil)  // JSON and help only ever use the new name
+        #expect(CategoryID.aliases.values.allSatisfy { CategoryID.allCases.contains($0) })
+    }
+
+    @Test func runtimeLabelsMatchXcodeComponents() throws {
+        let runtimes = try SimctlQueries(runner: FakeSimctl()).runtimes()
+        let ios17 = try #require(runtimes.first { $0.build == "21A328" })
+        #expect(ios17.label == "iOS 17.0 Simulator (21A328)")
+    }
+
     @Test func defaultPolicyCoversExactlyTheAgreedCategories() {
         let env = Environment(home: URL(fileURLWithPath: "/Users/tester"))
         let byPolicy = Dictionary(grouping: Catalog.categories(in: env), by: \.policy).mapValues { Set($0.map(\.id)) }

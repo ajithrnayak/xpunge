@@ -30,6 +30,11 @@ public struct Runtime: Decodable, Sendable, Equatable {
         return "\(platform) \(version)"
     }
 
+    /// "iOS 18.4 Simulator (22E238)", the way Xcode's Components settings name it.
+    public var label: String {
+        "\(displayName) Simulator (\(build))"
+    }
+
     static func decodeList(_ data: Data) throws -> [Runtime] {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601

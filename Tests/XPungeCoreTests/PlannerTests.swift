@@ -74,7 +74,7 @@ import Testing
         let labels = plan.actions.map(\.label)
         #expect(!labels.contains { $0.contains("22E238") || $0.contains("23C54") })
         #expect(labels.count == 6)
-        #expect(plan.notes.contains("Keeping iOS 18.4 (22E238): Xcode-18.4.app uses it. Name it with --runtime to remove it anyway."))
+        #expect(plan.notes.contains("Keeping iOS 18.4 Simulator (22E238): Xcode-18.4.app uses it. Name it with --runtime to remove it anyway."))
         #expect(plan.notes.contains { $0.contains("23C54") && $0.contains("the selected Xcode and Xcode-26.2.app use it") })
     }
 
@@ -94,7 +94,7 @@ import Testing
         let simctl = SimctlQueries(runner: FakeSimctl(), otherXcodes: [("Xcode-14.3.app", FakeOtherXcode(chosenBuilds: nil))])
         let plan = try Planner(env: home.env, simctl: simctl)
             .plan(named: [.runtimes], options: CleanOptions(notUsedSinceDays: 365, now: fixtureDate))
-        #expect(plan.notes.contains { $0.hasPrefix("Couldn't check which runtimes Xcode-14.3.app uses") })
+        #expect(plan.notes.contains { $0.hasPrefix("Couldn't check which simulator runtimes Xcode-14.3.app uses") })
     }
 
     @Test func namedRuntimeIsRemovedEvenIfAnotherXcodeUsesIt() throws {
@@ -102,7 +102,7 @@ import Testing
         let simctl = SimctlQueries(runner: FakeSimctl(), otherXcodes: [("Xcode-18.4.app", FakeOtherXcode(chosenBuilds: ["22E238"]))])
         let plan = try Planner(env: home.env, simctl: simctl)
             .plan(named: [.runtimes], options: CleanOptions(runtimes: ["22E238"]))
-        #expect(plan.actions.map(\.label) == ["iOS 18.4 (22E238)"])
+        #expect(plan.actions.map(\.label) == ["iOS 18.4 Simulator (22E238)"])
     }
 
     @Test func notUsedSinceKeepsTheSelectedXcodesRuntime() throws {

@@ -113,7 +113,7 @@ public struct Scanner: Sendable {
                 var notes = [RuntimeAge.describe(runtime, now: now)]
                 if let user = users.describe(runtime.build) { notes.append("used by \(user)") }
                 if !runtime.deletable { notes.append("simctl cannot delete it") }
-                return Detail(name: "\(runtime.displayName) (\(runtime.build))", bytes: runtime.sizeBytes,
+                return Detail(name: runtime.label, bytes: runtime.sizeBytes,
                               note: notes.joined(separator: ", "))
             }
             let total = runtimes.reduce(0) { $0 + $1.sizeBytes }

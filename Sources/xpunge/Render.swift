@@ -85,7 +85,7 @@ enum Render {
                 + named.map { "\($0.id.rawValue) (\(size($0.bytes ?? 0)))" }.joined(separator: ", ") + ".")
         }
         if !xcodeFound {
-            lines.append("No full Xcode found, so runtimes and device sets are partly unmeasured. "
+            lines.append("No full Xcode found, so simulator runtimes and device sets are partly unmeasured. "
                 + "Set DEVELOPER_DIR to an Xcode's Contents/Developer.")
         }
         lines.append("Preview a clean with `xpunge clean --dry-run`.")

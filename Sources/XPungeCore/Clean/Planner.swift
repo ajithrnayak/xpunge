@@ -92,7 +92,7 @@ public struct Planner: Sendable {
             for runtime in try RuntimeSelection.select(from: runtimes, users: users, options: options, notes: &plan.notes) {
                 plan.actions.append(Action(
                     category: .runtimes, kind: .simctl(["runtime", "delete", runtime.identifier]),
-                    label: "\(runtime.displayName) (\(runtime.build))", bytes: runtime.sizeBytes
+                    label: runtime.label, bytes: runtime.sizeBytes
                 ))
             }
 
@@ -118,12 +118,12 @@ enum RuntimeSelection {
 
         if let days = options.notUsedSinceDays {
             for name in users.unchecked {
-                notes.append("Couldn't check which runtimes \(name) uses, so its runtimes may be selected. Check the list before cleaning.")
+                notes.append("Couldn't check which simulator runtimes \(name) uses, so its runtimes may be selected. Check the list before cleaning.")
             }
             let cutoff = options.now.addingTimeInterval(-Double(days) * 86_400)
             for runtime in runtimes where (runtime.lastActivity ?? .distantPast) < cutoff {
                 if let user = users.describe(runtime.build) {
-                    notes.append("Keeping \(runtime.displayName) (\(runtime.build)): \(user) \(users.byBuild[runtime.build]!.count > 1 ? "use" : "uses") it. Name it with --runtime to remove it anyway.")
+                    notes.append("Keeping \(runtime.label): \(user) \(users.byBuild[runtime.build]!.count > 1 ? "use" : "uses") it. Name it with --runtime to remove it anyway.")
                     continue
                 }
                 selected.append(runtime)
@@ -134,7 +134,7 @@ enum RuntimeSelection {
         return selected.filter { runtime in
             guard seen.insert(runtime.identifier).inserted else { return false }
             if !runtime.deletable {
-                notes.append("Skipping \(runtime.displayName) (\(runtime.build)): simctl reports it cannot be deleted. See the project README on orphaned runtimes.")
+                notes.append("Skipping \(runtime.label): simctl reports it cannot be deleted. See the project README on orphaned runtimes.")
                 return false
             }
             return true
