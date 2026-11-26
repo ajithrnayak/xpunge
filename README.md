@@ -8,25 +8,25 @@ Xcode quietly fills tens of gigabytes: simulator runtimes, DerivedData, package 
 
 ```
 $ xpunge scan
-+--------------------+-----------+-------------+------------------------------------+
-|                                    xpunge scan                                    |
-+--------------------+-----------+-------------+------------------------------------+
-| Category           |      Size | Clean       | Note                               |
-+--------------------+-----------+-------------+------------------------------------+
-| simulator-runtimes |   62.6 GB | by name     | 8 runtimes, 4 with no recorded use |
-| simulator-devices  |  11.46 GB | default     | 21 unavailable (1.72 GB)           |
-| swiftpm-cache      |   9.37 GB | default     |                                    |
-| previews           |   8.56 GB | default     | 3 unavailable (3.57 GB)            |
-| playground-devices |   5.94 GB | report only |                                    |
-| xcode-apps         |   4.24 GB | report only | 1 installed                        |
-| xcodes-downloads   |    3.4 GB | by name     | includes unfinished downloads      |
-| cocoapods-cache    |   1.84 GB | default     |                                    |
-| documentation      |    553 MB | default     |                                    |
-| derived-data       |    187 MB | default     | includes compilation cache (29 KB) |
-| …                  |           |             |                                    |
-+--------------------+-----------+-------------+------------------------------------+
-| Total              | 108.15 GB |             | a plain clean frees about 17.25 GB |
-+--------------------+-----------+-------------+------------------------------------+
++--------------------+-----------+-------------+-----------------------------------------------------+
+|                                            xpunge scan                                             |
++--------------------+-----------+-------------+-----------------------------------------------------+
+| Category           |      Size | Clean       | Note                                                |
++--------------------+-----------+-------------+-----------------------------------------------------+
+| simulator-runtimes |   62.6 GB | by name     | 8 runtimes, 1 used by Xcode, 3 with no recorded use |
+| simulator-devices  |  11.46 GB | default     | 21 unavailable (1.72 GB)                            |
+| swiftpm-cache      |   9.37 GB | default     |                                                     |
+| previews           |   8.56 GB | default     | 3 unavailable (3.57 GB)                             |
+| playground-devices |   5.94 GB | report only |                                                     |
+| xcode-apps         |   4.24 GB | report only | 1 installed                                         |
+| xcodes-downloads   |    3.4 GB | by name     | includes unfinished downloads                       |
+| cocoapods-cache    |   1.84 GB | default     |                                                     |
+| documentation      |    553 MB | default     |                                                     |
+| derived-data       |    187 MB | default     | includes compilation cache (29 KB)                  |
+| …                  |           |             |                                                     |
++--------------------+-----------+-------------+-----------------------------------------------------+
+| Total              | 108.15 GB |             | a plain clean frees about 17.25 GB                  |
++--------------------+-----------+-------------+-----------------------------------------------------+
 
 Voilà! 🧐 Xcode is using 108.15 GB here; a plain clean frees about 17.25 GB.
 Cleaned only when named: simulator-runtimes (62.6 GB), xcodes-downloads (3.4 GB).

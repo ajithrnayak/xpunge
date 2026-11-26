@@ -10,7 +10,7 @@ import Testing
         let bytes = try #require(report.bytes)
         #expect((62_500_000_000...62_700_000_000).contains(bytes))
         #expect(report.details.count == 8)
-        #expect(report.note == "8 runtimes, 4 with no recorded use")
+        #expect(report.note == "8 runtimes, 1 used by Xcode, 3 with no recorded use")
         let current = try #require(report.details.first { $0.name.contains("23C54") })
         #expect(current.note?.contains("used by the selected Xcode") == true)
     }
@@ -122,6 +122,27 @@ import Testing
         #expect(CategoryID(name: "runtime") == nil)
         #expect(CategoryID(rawValue: "runtimes") == nil)  // JSON and help only ever use the new name
         #expect(CategoryID.aliases.values.allSatisfy { CategoryID.allCases.contains($0) })
+    }
+
+    @Test func runtimesNoteDoesNotCallUsedRuntimesUnused() throws {
+        let home = try TempHome()
+        // 23C54 (selected Xcode) and 22D8075 (another Xcode) have no recorded use, but Xcode uses them.
+        let simctl = SimctlQueries(runner: FakeSimctl(), otherXcodes: [("Xcode-18.3.app", FakeOtherXcode(chosenBuilds: ["22D8075"]))])
+        let report = try #require(Scanner(env: home.env, simctl: simctl, now: fixtureDate).scan([.runtimes]).first)
+        #expect(report.note == "8 runtimes, 2 used by Xcode, 2 with no recorded use")
+    }
+
+    @Test func runtimeNoXcodeUsesIsPointedAtTheBuildXcodeUses() throws {
+        let home = try TempHome()
+        // Captured on a Mac with two iOS 27.2 builds; Xcode 27.2 uses 24B8117.
+        let simctl = SimctlQueries(runner: FakeSimctl(home: home.url, xcode: "xcode27"))
+        let report = try #require(Scanner(env: home.env, simctl: simctl, now: fixtureDate).scan([.runtimes]).first)
+        let twins = report.details.filter { $0.name.hasPrefix("iOS 27.2 Simulator") }
+        #expect(twins.count == 2)
+        let unused = try #require(twins.first { !$0.name.contains("24B8117") })
+        #expect(unused.note?.hasSuffix("no Xcode uses this build; they use 24B8117") == true)
+        let used = try #require(twins.first { $0.name.contains("24B8117") })
+        #expect(used.note?.contains("no Xcode uses this build") == false)
     }
 
     @Test func runtimeSizeIncludesItsDyldCache() throws {
