@@ -65,6 +65,9 @@ enum Exit {
     static let refused = ExitCode(3)
 }
 
+/// Writes to stderr after flushing stdout, so the message lands after anything already printed
+/// even when stdout is a pipe (block-buffered) and stderr isn't buffered.
 func printError(_ message: String) {
+    fflush(stdout)
     FileHandle.standardError.write(Data(("xpunge: " + message + "\n").utf8))
 }
