@@ -64,25 +64,21 @@ struct Clean: ParsableCommand {
         plan = plan.ordered()
         let terminal = Terminal.current()
 
-        if dryRun {
-            print(json ? try Render.json(PlanOutput(plan: plan, dryRun: true, results: nil))
-                       : Render.plan(plan, dryRun: true, terminal: terminal))
+        if dryRun || plan.actions.isEmpty {
+            print(json ? try Render.json(PlanOutput(plan: plan, dryRun: dryRun, results: nil))
+                       : Render.plan(plan, dryRun: dryRun, terminal: terminal))
             return
         }
-        if !json { print(Render.plan(plan, dryRun: false, terminal: terminal)) }
-        guard !plan.actions.isEmpty else { return }
 
-        let running = RunningApps.running()
-        guard running.isEmpty else {
-            printError("Quit \(running.joined(separator: " and ")) first. Cleaning while they run can corrupt their state.")
+        // Refuse before printing a plan that can't run, so the reason isn't lost below it.
+        if let reason = Self.refusal(running: RunningApps.running(), stdinIsTerminal: isatty(STDIN_FILENO) == 1, yes: yes) {
+            printError(reason)
             throw Exit.refused
         }
 
+        if !json { print(Render.plan(plan, dryRun: false, terminal: terminal)) }
+
         if !yes {
-            guard isatty(STDIN_FILENO) == 1 else {
-                printError("Not a terminal, so I can't ask for confirmation. Use --yes, or --dry-run to preview.")
-                throw Exit.refused
-            }
             print("Remove \(plan.actions.count) item(s), \(ByteFormat.string(plan.totalBytes))? This cannot be undone. [y/N] ", terminator: "")
             guard let answer = readLine(), ["y", "yes"].contains(answer.lowercased()) else {
                 print("Nothing removed.")
@@ -101,5 +97,17 @@ struct Clean: ParsableCommand {
             print(Render.summary(results, terminal: terminal))
         }
         if results.contains(where: { !$0.succeeded }) { throw Exit.partial }
+    }
+
+    /// Why a clean can't start, or nil if it can. Checked before the plan is printed.
+    static func refusal(running: [String], stdinIsTerminal: Bool, yes: Bool) -> String? {
+        if !running.isEmpty {
+            return "Quit \(running.joined(separator: " and ")) first. Cleaning while they run can corrupt their state. "
+                + "Add --dry-run to see the plan."
+        }
+        if !yes && !stdinIsTerminal {
+            return "Not a terminal, so I can't ask for confirmation. Use --yes, or --dry-run to see the plan."
+        }
+        return nil
     }
 }
