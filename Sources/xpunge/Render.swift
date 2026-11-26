@@ -116,6 +116,9 @@ enum Render {
                 if let previous, previous != action.category { table.addSeparator() }
                 previous = action.category
                 table.add(["\(index + 1)", action.category.rawValue, action.label, size(action.bytes)])
+                if let note = action.note {
+                    table.add(["", "", note, ""], .dim)
+                }
                 if case .simctl = action.kind {
                     table.add(["", "", "runs: \(action.target)", ""], .dim)
                 }

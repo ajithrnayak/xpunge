@@ -124,6 +124,30 @@ import Testing
         #expect(CategoryID.aliases.values.allSatisfy { CategoryID.allCases.contains($0) })
     }
 
+    @Test func runtimeSizeIncludesItsDyldCache() throws {
+        let home = try TempHome()
+        // iOS 17.0 (21A328) has caches for two macOS builds; iOS 17.0.1 (21A342) shares the identifier but not the build.
+        try home.file("SystemDyld/26B131/com.apple.CoreSimulator.SimRuntime.iOS-17-0.21A328/dyld_sim_shared_cache_arm64e", bytes: 3_000_000)
+        try home.file("SystemDyld/25C56/com.apple.CoreSimulator.SimRuntime.iOS-17-0.21A328/dyld_sim_shared_cache_arm64e", bytes: 1_000_000)
+        try home.file("SystemDyld/26B131/com.apple.CoreSimulator.SimRuntime.iOS-99-0.99Z99/dyld_sim_shared_cache_arm64e", bytes: 5_000_000)
+        let dyld = Sizer.size(of: home.url.appendingPathComponent("SystemDyld/26B131/com.apple.CoreSimulator.SimRuntime.iOS-17-0.21A328"))
+            + Sizer.size(of: home.url.appendingPathComponent("SystemDyld/25C56/com.apple.CoreSimulator.SimRuntime.iOS-17-0.21A328"))
+        #expect(dyld >= 4_000_000)
+
+        let simctl = SimctlQueries(runner: FakeSimctl())
+        let report = try #require(Scanner(env: home.env, simctl: simctl, now: fixtureDate).scan([.runtimes]).first)
+        let ios17 = try #require(report.details.first { $0.name.contains("21A328") })
+        #expect(ios17.bytes == 7_559_529_352 + dyld)
+        #expect(ios17.note?.contains("includes \(ByteFormat.string(dyld)) dyld cache") == true)
+        let ios1701 = try #require(report.details.first { $0.name.contains("21A342") })
+        #expect(ios1701.bytes == 7_210_691_623)
+        #expect(ios1701.note?.contains("dyld") == false)
+
+        let plan = try Planner(env: home.env, simctl: simctl).plan(named: [.runtimes], options: CleanOptions(runtimes: ["21A328"]))
+        #expect(plan.actions.map(\.bytes) == [7_559_529_352 + dyld])
+        #expect(plan.actions.first?.note == "includes \(ByteFormat.string(dyld)) dyld cache")
+    }
+
     @Test func runtimeLabelsMatchXcodeComponents() throws {
         let runtimes = try SimctlQueries(runner: FakeSimctl()).runtimes()
         let ios17 = try #require(runtimes.first { $0.build == "21A328" })

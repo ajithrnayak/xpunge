@@ -14,6 +14,12 @@ public struct Runtime: Decodable, Sendable, Equatable {
     public let path: String?
     /// Not in simctl's JSON; filled in from the disk image. See `SimctlQueries.runtimes()`.
     public var installedAt: Date?
+    /// Not in simctl's JSON: the size of this runtime's dyld shared cache, which CoreSimulator
+    /// removes along with the runtime. See `SimctlQueries.runtimes(dyldCache:)`.
+    public var dyldCacheBytes: Int64?
+
+    /// What deleting the runtime frees: the disk image plus its dyld cache.
+    public var totalBytes: Int64 { sizeBytes + (dyldCacheBytes ?? 0) }
 
     /// The most recent sign of life: last use, or install if that's later.
     /// Xcode 26 and later leave `lastUsedAt` empty for most runtimes, so install date stops

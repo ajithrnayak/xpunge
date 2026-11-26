@@ -107,16 +107,17 @@ public struct Scanner: Sendable {
                                   bytes: nil, reclaimable: nil, note: "needs Xcode (sizes come from simctl only)", details: [])
         }
         do {
-            let runtimes = try simctl.runtimes()
+            let runtimes = try simctl.runtimes(dyldCache: env.simulatorDyldCache)
             let users = simctl.runtimeUsers()
             let details = runtimes.map { runtime in
                 var notes = [RuntimeAge.describe(runtime, now: now)]
                 if let user = users.describe(runtime.build) { notes.append("used by \(user)") }
                 if !runtime.deletable { notes.append("simctl cannot delete it") }
-                return Detail(name: runtime.label, bytes: runtime.sizeBytes,
+                if let dyld = DyldCache.note(runtime) { notes.append(dyld) }
+                return Detail(name: runtime.label, bytes: runtime.totalBytes,
                               note: notes.joined(separator: ", "))
             }
-            let total = runtimes.reduce(0) { $0 + $1.sizeBytes }
+            let total = runtimes.reduce(0) { $0 + $1.totalBytes }
             let unused = runtimes.filter { $0.lastUsedAt == nil }.count
             var note = "\(runtimes.count) runtime\(runtimes.count == 1 ? "" : "s")"
             if unused > 0 { note += ", \(unused) with no recorded use" }
@@ -140,6 +141,14 @@ enum DeviceSize {
             return Sizer.size(of: folder)
         }
         return device.dataPathSize ?? 0
+    }
+}
+
+enum DyldCache {
+    /// "includes 3.8 GB dyld cache", or nil when the runtime has none.
+    static func note(_ runtime: Runtime) -> String? {
+        guard let bytes = runtime.dyldCacheBytes, bytes > 0 else { return nil }
+        return "includes \(ByteFormat.string(bytes)) dyld cache"
     }
 }
 

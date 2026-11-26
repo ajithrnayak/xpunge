@@ -11,19 +11,24 @@ public struct Environment: Sendable {
     /// Custom locations set in Xcode > Settings > Locations, if any.
     public var customDerivedData: URL?
     public var customArchives: URL?
+    /// CoreSimulator's per-runtime dyld shared caches. Only measured, never removed by xpunge:
+    /// CoreSimulator deletes a runtime's cache when the runtime is deleted.
+    public var simulatorDyldCache: URL
 
     public init(
         home: URL,
         applications: URL = URL(fileURLWithPath: "/Applications"),
         variables: [String: String] = [:],
         customDerivedData: URL? = nil,
-        customArchives: URL? = nil
+        customArchives: URL? = nil,
+        simulatorDyldCache: URL = URL(fileURLWithPath: "/Library/Developer/CoreSimulator/Caches/dyld", isDirectory: true)
     ) {
         self.home = home
         self.applications = applications
         self.variables = variables
         self.customDerivedData = customDerivedData
         self.customArchives = customArchives
+        self.simulatorDyldCache = simulatorDyldCache
     }
 
     /// The real environment of the current user.

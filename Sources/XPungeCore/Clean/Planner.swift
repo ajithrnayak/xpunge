@@ -87,12 +87,12 @@ public struct Planner: Sendable {
 
         case .runtimes:
             guard let simctl else { throw PlanError.needsXcode(.runtimes) }
-            let runtimes = try simctl.runtimes()
+            let runtimes = try simctl.runtimes(dyldCache: env.simulatorDyldCache)
             let users = simctl.runtimeUsers()
             for runtime in try RuntimeSelection.select(from: runtimes, users: users, options: options, notes: &plan.notes) {
                 plan.actions.append(Action(
                     category: .runtimes, kind: .simctl(["runtime", "delete", runtime.identifier]),
-                    label: runtime.label, bytes: runtime.sizeBytes
+                    label: runtime.label, bytes: runtime.totalBytes, note: DyldCache.note(runtime)
                 ))
             }
 

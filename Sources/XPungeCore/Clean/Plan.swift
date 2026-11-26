@@ -13,6 +13,8 @@ public struct Action: Sendable, Equatable {
     public let kind: Kind
     public let label: String
     public let bytes: Int64
+    /// Extra detail shown under the item, e.g. what its size includes.
+    public var note: String? = nil
 
     /// Human-readable target: a path or a simctl command line.
     public var target: String {
