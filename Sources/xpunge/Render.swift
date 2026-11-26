@@ -72,13 +72,19 @@ enum Render {
         }
 
         let total = reports.compactMap(\.bytes).reduce(0, +)
-        let defaultTotal = reports.filter { $0.policy == .byDefault }.compactMap(\.reclaimable).reduce(0, +)
+        let defaults = reports.filter { $0.policy == .byDefault }
+        let defaultTotal = defaults.compactMap(\.reclaimable).reduce(0, +)
+        // What a plain `xpunge clean` would do, or nil when no default category was scanned.
+        let plainClean: String? = defaults.isEmpty ? nil
+            : defaultTotal > 0 ? "a plain clean frees about \(size(defaultTotal))"
+            : "nothing left to clean by default"
         table.addSeparator()
-        table.add(["Total", size(total), "", "a plain clean frees about \(size(defaultTotal))"], .bold)
+        table.add(["Total", size(total), "", plainClean ?? ""], .bold)
 
         var lines = [table.render(maxWidth: terminal.width, color: terminal.color), ""]
         let subject = complete ? "Xcode is using \(size(total)) here" : "These categories use \(size(total))"
-        lines.append(terminal.cheer(.scanned, "\(subject); a plain clean frees about \(size(defaultTotal))."))
+        let spotless = !defaults.isEmpty && defaultTotal == 0
+        lines.append(terminal.cheer(spotless ? .spotless : .scanned, subject + (plainClean.map { "; \($0)." } ?? ".")))
         let named = reports.filter { $0.policy == .namedOnly && ($0.bytes ?? 0) > 0 }
         if !named.isEmpty {
             lines.append("Cleaned only when named: "
@@ -88,7 +94,11 @@ enum Render {
             lines.append("No full Xcode found, so simulator runtimes and device sets are partly unmeasured. "
                 + "Set DEVELOPER_DIR to an Xcode's Contents/Developer.")
         }
-        lines.append("Preview a clean with `xpunge clean --dry-run`.")
+        if defaultTotal > 0 {
+            lines.append("Preview a clean with `xpunge clean --dry-run`.")
+        } else if !named.isEmpty && !details {
+            lines.append("See what's in them with `xpunge scan \(named.map(\.id.rawValue).joined(separator: " ")) --details`.")
+        }
         return lines.joined(separator: "\n")
     }
 
