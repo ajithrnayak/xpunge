@@ -87,7 +87,7 @@ public struct Planner: Sendable {
 
         case .runtimes:
             guard let simctl else { throw PlanError.needsXcode(.runtimes) }
-            let runtimes = try simctl.runtimes(dyldCache: env.simulatorDyldCache)
+            let runtimes = try simctl.runtimes(dyldCache: env.simulatorDyldCache, macOSBuild: env.macOSBuild)
             let users = simctl.runtimeUsers()
             for runtime in try RuntimeSelection.select(from: runtimes, users: users, options: options, notes: &plan.notes) {
                 plan.actions.append(Action(

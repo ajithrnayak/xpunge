@@ -20,7 +20,7 @@ final class TempHome {
     /// Never the real /Library: the dyld cache root is inside the temp folder too.
     var env: Environment {
         Environment(home: url, applications: url.appendingPathComponent("Applications"),
-                    simulatorDyldCache: url.appendingPathComponent("SystemDyld", isDirectory: true))
+                    simulatorDyldCache: url.appendingPathComponent("SystemDyld", isDirectory: true), macOSBuild: "26B131")
     }
 
     @discardableResult

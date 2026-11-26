@@ -107,13 +107,13 @@ public struct Scanner: Sendable {
                                   bytes: nil, reclaimable: nil, note: "needs Xcode (sizes come from simctl only)", details: [])
         }
         do {
-            let runtimes = try simctl.runtimes(dyldCache: env.simulatorDyldCache)
+            let runtimes = try simctl.runtimes(dyldCache: env.simulatorDyldCache, macOSBuild: env.macOSBuild)
             let users = simctl.runtimeUsers()
             let details = runtimes.map { runtime in
                 var notes = [RuntimeAge.describe(runtime, now: now)]
                 if let user = users.describe(runtime.build) { notes.append("used by \(user)") }
                 if let used = RuntimeNote.usedTwin(of: runtime, in: runtimes, users: users) {
-                    notes.append("no Xcode uses this build; they use \(used.build)")
+                    notes.append("no Xcode uses this build; Xcode uses \(used.build)")
                 }
                 if !runtime.deletable { notes.append("simctl cannot delete it") }
                 if let dyld = DyldCache.note(runtime) { notes.append(dyld) }
