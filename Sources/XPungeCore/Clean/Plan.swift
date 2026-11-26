@@ -13,6 +13,8 @@ public struct Action: Sendable, Equatable {
     public let kind: Kind
     public let label: String
     public let bytes: Int64
+    /// Extra detail shown under the item, e.g. what its size includes.
+    public var note: String? = nil
 
     /// Human-readable target: a path or a simctl command line.
     public var target: String {
@@ -73,13 +75,13 @@ public enum PlanError: Error, Equatable, CustomStringConvertible {
         case .scanOnly(let id):
             "\(id.rawValue) is report-only; xpunge never removes it."
         case .runtimesNeedSelector:
-            "runtimes needs --runtime <build|id> or --not-used-since <days>. xpunge never deletes all runtimes at once."
+            "simulator-runtimes needs --runtime <build|id> or --not-used-since <days>. xpunge never deletes all runtimes at once."
         case .runtimeOptionsWithoutCategory:
-            "--runtime and --not-used-since only apply when the runtimes category is named."
+            "--runtime and --not-used-since only apply when the simulator-runtimes category is named."
         case .keepLatestWithoutCategory:
             "--keep-latest only applies when the device-support category is named."
         case .unknownRuntime(let selector):
-            "No installed runtime matches \"\(selector)\". Run `xpunge scan runtimes --details` to list them."
+            "No installed runtime matches \"\(selector)\". Run `xpunge scan simulator-runtimes --details` to list them."
         case .needsXcode(let id):
             "\(id.rawValue) needs a full Xcode for simctl, and none was found. Set DEVELOPER_DIR or install Xcode."
         case .invalidValue(let message):

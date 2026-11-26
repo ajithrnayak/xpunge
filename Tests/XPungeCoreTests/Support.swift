@@ -17,7 +17,11 @@ final class TempHome {
         if url.path.contains("/xpunge-tests-") { try? FileManager.default.removeItem(at: url) }
     }
 
-    var env: Environment { Environment(home: url, applications: url.appendingPathComponent("Applications")) }
+    /// Never the real /Library: the dyld cache root is inside the temp folder too.
+    var env: Environment {
+        Environment(home: url, applications: url.appendingPathComponent("Applications"),
+                    simulatorDyldCache: url.appendingPathComponent("SystemDyld", isDirectory: true), macOSBuild: "26B131")
+    }
 
     @discardableResult
     func file(_ relative: String, bytes: Int = 4096) throws -> URL {

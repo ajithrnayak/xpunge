@@ -11,19 +11,29 @@ public struct Environment: Sendable {
     /// Custom locations set in Xcode > Settings > Locations, if any.
     public var customDerivedData: URL?
     public var customArchives: URL?
+    /// CoreSimulator's per-runtime dyld shared caches. Only measured, never removed by xpunge:
+    /// CoreSimulator deletes a runtime's cache when the runtime is deleted.
+    public var simulatorDyldCache: URL
+    /// The running macOS build, e.g. "26B131". The dyld caches are kept per macOS build; only the
+    /// current build's are counted. nil leaves the dyld caches out of runtime sizes.
+    public var macOSBuild: String?
 
     public init(
         home: URL,
         applications: URL = URL(fileURLWithPath: "/Applications"),
         variables: [String: String] = [:],
         customDerivedData: URL? = nil,
-        customArchives: URL? = nil
+        customArchives: URL? = nil,
+        simulatorDyldCache: URL = URL(fileURLWithPath: "/Library/Developer/CoreSimulator/Caches/dyld", isDirectory: true),
+        macOSBuild: String? = nil
     ) {
         self.home = home
         self.applications = applications
         self.variables = variables
         self.customDerivedData = customDerivedData
         self.customArchives = customArchives
+        self.simulatorDyldCache = simulatorDyldCache
+        self.macOSBuild = macOSBuild
     }
 
     /// The real environment of the current user.
@@ -38,8 +48,18 @@ public struct Environment: Sendable {
             home: FileManager.default.homeDirectoryForCurrentUser,
             variables: ProcessInfo.processInfo.environment,
             customDerivedData: customPath("IDECustomDerivedDataLocation"),
-            customArchives: customPath("IDECustomDistributionArchivesLocation")
+            customArchives: customPath("IDECustomDistributionArchivesLocation"),
+            macOSBuild: osBuild()
         )
+    }
+
+    /// `sysctl kern.osversion`, the macOS build number.
+    static func osBuild() -> String? {
+        var size = 0
+        guard sysctlbyname("kern.osversion", nil, &size, nil, 0) == 0, size > 0 else { return nil }
+        var buffer = [CChar](repeating: 0, count: size)
+        guard sysctlbyname("kern.osversion", &buffer, &size, nil, 0) == 0 else { return nil }
+        return String(cString: buffer)
     }
 
     func homePath(_ relative: String) -> URL {

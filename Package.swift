@@ -24,5 +24,10 @@ let package = Package(
             dependencies: ["XPungeCore"],
             resources: [.copy("Fixtures")]
         ),
+        // Output and argument handling in the executable.
+        .testTarget(
+            name: "XPungeTests",
+            dependencies: ["xpunge", "XPungeCore"]
+        ),
     ]
 )

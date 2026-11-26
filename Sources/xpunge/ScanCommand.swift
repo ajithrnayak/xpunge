@@ -17,6 +17,7 @@ struct Scan: ParsableCommand {
     var json = false
 
     func run() throws {
+        noteRenamedCategories()
         let context = Context.current()
         let scanner = Scanner(env: context.env, simctl: context.queries)
         let reports = scanner.scan(categories.isEmpty ? CategoryID.allCases : categories)

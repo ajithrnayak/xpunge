@@ -107,21 +107,23 @@ public struct Scanner: Sendable {
                                   bytes: nil, reclaimable: nil, note: "needs Xcode (sizes come from simctl only)", details: [])
         }
         do {
-            let runtimes = try simctl.runtimes()
+            let runtimes = try simctl.runtimes(dyldCache: env.simulatorDyldCache, macOSBuild: env.macOSBuild)
             let users = simctl.runtimeUsers()
             let details = runtimes.map { runtime in
                 var notes = [RuntimeAge.describe(runtime, now: now)]
                 if let user = users.describe(runtime.build) { notes.append("used by \(user)") }
+                if let used = RuntimeNote.usedTwin(of: runtime, in: runtimes, users: users) {
+                    notes.append("no Xcode uses this build; Xcode uses \(used.build)")
+                }
                 if !runtime.deletable { notes.append("simctl cannot delete it") }
-                return Detail(name: "\(runtime.displayName) (\(runtime.build))", bytes: runtime.sizeBytes,
+                if let dyld = DyldCache.note(runtime) { notes.append(dyld) }
+                return Detail(name: runtime.label, bytes: runtime.totalBytes,
                               note: notes.joined(separator: ", "))
             }
-            let total = runtimes.reduce(0) { $0 + $1.sizeBytes }
-            let unused = runtimes.filter { $0.lastUsedAt == nil }.count
-            var note = "\(runtimes.count) runtime\(runtimes.count == 1 ? "" : "s")"
-            if unused > 0 { note += ", \(unused) with no recorded use" }
+            let total = runtimes.reduce(0) { $0 + $1.totalBytes }
             return CategoryReport(id: category.id, title: category.title, policy: category.policy,
-                                  bytes: total, reclaimable: nil, note: note, details: details)
+                                  bytes: total, reclaimable: nil, note: RuntimeNote.summary(runtimes, users: users),
+                                  details: details)
         } catch {
             return CategoryReport(id: category.id, title: category.title, policy: category.policy,
                                   bytes: nil, reclaimable: nil, note: "simctl failed: \(error)", details: [])
@@ -140,6 +142,36 @@ enum DeviceSize {
             return Sizer.size(of: folder)
         }
         return device.dataPathSize ?? 0
+    }
+}
+
+enum RuntimeNote {
+    /// "3 runtimes, 2 used by Xcode, 1 with no recorded use".
+    /// Runtimes an Xcode uses aren't counted as having no recorded use: Xcode 26 and later leave
+    /// that date empty for most runtimes, so it would make needed runtimes look unused.
+    static func summary(_ runtimes: [Runtime], users: RuntimeUsers) -> String {
+        let used = runtimes.filter { users.describe($0.build) != nil }
+        let unused = runtimes.filter { users.describe($0.build) == nil && $0.lastUsedAt == nil }
+        var note = "\(runtimes.count) runtime\(runtimes.count == 1 ? "" : "s")"
+        if !used.isEmpty { note += ", \(used.count) used by Xcode" }
+        if !unused.isEmpty { note += ", \(unused.count) with no recorded use" }
+        return note
+    }
+
+    /// For a runtime no Xcode uses: another build of the same OS version that an Xcode does use.
+    static func usedTwin(of runtime: Runtime, in runtimes: [Runtime], users: RuntimeUsers) -> Runtime? {
+        guard users.describe(runtime.build) == nil else { return nil }
+        return runtimes.first {
+            $0.identifier != runtime.identifier && $0.displayName == runtime.displayName && users.describe($0.build) != nil
+        }
+    }
+}
+
+enum DyldCache {
+    /// "includes 3.8 GB dyld cache", or nil when the runtime has none.
+    static func note(_ runtime: Runtime) -> String? {
+        guard let bytes = runtime.dyldCacheBytes, bytes > 0 else { return nil }
+        return "includes \(ByteFormat.string(bytes)) dyld cache"
     }
 }
 

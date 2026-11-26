@@ -12,7 +12,8 @@ public enum CategoryID: String, CaseIterable, Codable, Sendable, Comparable {
     case simulatorDevices = "simulator-devices"
     case previews
     case testDevices = "test-devices"
-    case runtimes
+    /// Simulator runtimes, as Apple's documentation calls them. Named `runtimes` before 0.2.0.
+    case runtimes = "simulator-runtimes"
     case deviceSupport = "device-support"
     case archives
     case xcodesDownloads = "xcodes-downloads"
@@ -21,6 +22,15 @@ public enum CategoryID: String, CaseIterable, Codable, Sendable, Comparable {
 
     public static func < (lhs: CategoryID, rhs: CategoryID) -> Bool {
         allCases.firstIndex(of: lhs)! < allCases.firstIndex(of: rhs)!
+    }
+
+    /// Old names that still work on the command line, until 1.0.
+    public static let aliases: [String: CategoryID] = ["runtimes": .runtimes]
+
+    /// A category by its ID or an old alias.
+    public init?(name: String) {
+        guard let id = CategoryID(rawValue: name) ?? Self.aliases[name] else { return nil }
+        self = id
     }
 }
 

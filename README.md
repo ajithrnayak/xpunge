@@ -8,28 +8,28 @@ Xcode quietly fills tens of gigabytes: simulator runtimes, DerivedData, package 
 
 ```
 $ xpunge scan
-+--------------------+-----------+-------------+------------------------------------+
-|                                    xpunge scan                                    |
-+--------------------+-----------+-------------+------------------------------------+
-| Category           |      Size | Clean       | Note                               |
-+--------------------+-----------+-------------+------------------------------------+
-| runtimes           |   62.6 GB | by name     | 8 runtimes, 4 with no recorded use |
-| simulator-devices  |  11.46 GB | default     | 21 unavailable (1.72 GB)           |
-| swiftpm-cache      |   9.37 GB | default     |                                    |
-| previews           |   8.56 GB | default     | 3 unavailable (3.57 GB)            |
-| playground-devices |   5.94 GB | report only |                                    |
-| xcode-apps         |   4.24 GB | report only | 1 installed                        |
-| xcodes-downloads   |    3.4 GB | by name     | includes unfinished downloads      |
-| cocoapods-cache    |   1.84 GB | default     |                                    |
-| documentation      |    553 MB | default     |                                    |
-| derived-data       |    187 MB | default     | includes compilation cache (29 KB) |
-| …                  |           |             |                                    |
-+--------------------+-----------+-------------+------------------------------------+
-| Total              | 108.15 GB |             | a plain clean frees about 17.25 GB |
-+--------------------+-----------+-------------+------------------------------------+
++--------------------+-----------+-------------+-----------------------------------------------------+
+|                                            xpunge scan                                             |
++--------------------+-----------+-------------+-----------------------------------------------------+
+| Category           |      Size | Clean       | Note                                                |
++--------------------+-----------+-------------+-----------------------------------------------------+
+| simulator-runtimes |   62.6 GB | by name     | 8 runtimes, 1 used by Xcode, 3 with no recorded use |
+| simulator-devices  |  11.46 GB | default     | 21 unavailable (1.72 GB)                            |
+| swiftpm-cache      |   9.37 GB | default     |                                                     |
+| previews           |   8.56 GB | default     | 3 unavailable (3.57 GB)                             |
+| playground-devices |   5.94 GB | report only |                                                     |
+| xcode-apps         |   4.24 GB | report only | 1 installed                                         |
+| xcodes-downloads   |    3.4 GB | by name     | includes unfinished downloads                       |
+| cocoapods-cache    |   1.84 GB | default     |                                                     |
+| documentation      |    553 MB | default     |                                                     |
+| derived-data       |    187 MB | default     | includes compilation cache (29 KB)                  |
+| …                  |           |             |                                                     |
++--------------------+-----------+-------------+-----------------------------------------------------+
+| Total              | 108.15 GB |             | a plain clean frees about 17.25 GB                  |
++--------------------+-----------+-------------+-----------------------------------------------------+
 
 Voilà! 🧐 Xcode is using 108.15 GB here; a plain clean frees about 17.25 GB.
-Cleaned only when named: runtimes (62.6 GB), xcodes-downloads (3.4 GB).
+Cleaned only when named: simulator-runtimes (62.6 GB), xcodes-downloads (3.4 GB).
 Preview a clean with `xpunge clean --dry-run`.
 ```
 
@@ -69,14 +69,14 @@ cp .build/release/xpunge /usr/local/bin/   # or anywhere on your PATH
 ```sh
 xpunge scan                      # size of every category, largest first (read-only)
 xpunge scan --details            # list what's inside each category
-xpunge scan runtimes --json      # machine-readable output
+xpunge scan simulator-runtimes --json   # machine-readable output
 
 xpunge clean --dry-run           # show exactly what a clean would remove
 xpunge clean                     # clean the safe default set, after confirmation
 xpunge clean derived-data swiftpm-cache
 
-xpunge clean runtimes --not-used-since 180 --dry-run
-xpunge clean runtimes --runtime 21A328          # by build or UUID
+xpunge clean simulator-runtimes --not-used-since 180 --dry-run
+xpunge clean simulator-runtimes --runtime 21A328   # by build or UUID
 xpunge clean device-support --keep-latest 2
 xpunge clean archives                           # only ever when named
 ```
@@ -101,7 +101,7 @@ In a terminal, success messages open with a random interjection and emoji ("Wooh
 | `simulator-devices` | Unavailable simulators only, via `simctl delete unavailable` | default |
 | `previews` | Unavailable SwiftUI Previews devices only, via `simctl --set previews` | default |
 | `test-devices` | Unavailable parallel-testing clones only, via `simctl --set testing` | default |
-| `runtimes` | Simulator runtimes, one `simctl runtime delete <uuid>` each | by name, with `--runtime` or `--not-used-since` |
+| `simulator-runtimes` | Simulator runtimes (the "iOS 18.4 Simulator" downloads in Xcode → Settings → Components), one `simctl runtime delete <uuid>` each. Called `runtimes` before 0.2.0; the old name works until 1.0. | by name, with `--runtime` or `--not-used-since` |
 | `device-support` | iOS, watchOS, tvOS and visionOS DeviceSupport | by name |
 | `archives` | `~/Library/Developer/Xcode/Archives` (contains your dSYMs) | by name |
 | `xcodes-downloads` | `.xip` files left by the Xcodes app | by name |
@@ -111,7 +111,7 @@ In a terminal, success messages open with a random interjection and emoji ("Wooh
 ## Safety
 
 - **Nothing outside a known category is touched.** `clean` only removes items directly inside a category's own folders, inside your home folder. Every action is checked twice: once when the plan is built and again just before it runs.
-- **Simulator data goes through `simctl`.** Runtimes are system-managed disk images; deleting their folders by hand breaks things. Runtime sizes come from `simctl runtime list`, never from `du`, because `du` can both over- and undercount them.
+- **Simulator data goes through `simctl`.** Runtimes are system-managed disk images; deleting their folders by hand breaks things. Runtime sizes come from `simctl runtime list`, never from `du`, because `du` can both over- and undercount them. Each runtime's size also counts its dyld shared cache for the running macOS build, in `/Library/Developer/CoreSimulator/Caches/dyld/<macOS build>`, which CoreSimulator deletes along with the runtime. xpunge only measures that folder; it never removes it.
 - **Never `all`.** `xpunge` never passes `all` to `simctl`. `--not-used-since` keeps the runtimes any installed Xcode in `/Applications` uses (asked through each Xcode's own `simctl runtime match list`) unless you name them. If one can't be checked, the plan says so. A runtime's age is its last use, or its install date if that's later, because Xcode 26 and later leave the last-use date empty for most runtimes.
 - **No sudo.** It never needs it and never asks for it.
 - **Finds Xcode itself.** `xcode-select` often points at the Command Line Tools, which have no `simctl`. `xpunge` uses `DEVELOPER_DIR` first, then `xcode-select`, then the newest `/Applications/Xcode*.app`. If it can't find a full Xcode, the `simctl` categories are skipped and only reported.

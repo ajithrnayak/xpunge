@@ -10,7 +10,7 @@ import Testing
         let bytes = try #require(report.bytes)
         #expect((62_500_000_000...62_700_000_000).contains(bytes))
         #expect(report.details.count == 8)
-        #expect(report.note == "8 runtimes, 4 with no recorded use")
+        #expect(report.note == "8 runtimes, 1 used by Xcode, 3 with no recorded use")
         let current = try #require(report.details.first { $0.name.contains("23C54") })
         #expect(current.note?.contains("used by the selected Xcode") == true)
     }
@@ -113,6 +113,76 @@ import Testing
 
         let others = XcodeLocator.otherInstalled(applications: home.env.applications, excluding: selected)
         #expect(others.map(\.lastPathComponent) == ["Xcode-26.2.0.app"])
+    }
+
+    @Test func runtimesCategoryUsesApplesNameAndKeepsTheOldOne() {
+        #expect(CategoryID.runtimes.rawValue == "simulator-runtimes")
+        #expect(CategoryID(name: "simulator-runtimes") == .runtimes)
+        #expect(CategoryID(name: "runtimes") == .runtimes)
+        #expect(CategoryID(name: "runtime") == nil)
+        #expect(CategoryID(rawValue: "runtimes") == nil)  // JSON and help only ever use the new name
+        #expect(CategoryID.aliases.values.allSatisfy { CategoryID.allCases.contains($0) })
+    }
+
+    @Test func runtimesNoteDoesNotCallUsedRuntimesUnused() throws {
+        let home = try TempHome()
+        // 23C54 (selected Xcode) and 22D8075 (another Xcode) have no recorded use, but Xcode uses them.
+        let simctl = SimctlQueries(runner: FakeSimctl(), otherXcodes: [("Xcode-18.3.app", FakeOtherXcode(chosenBuilds: ["22D8075"]))])
+        let report = try #require(Scanner(env: home.env, simctl: simctl, now: fixtureDate).scan([.runtimes]).first)
+        #expect(report.note == "8 runtimes, 2 used by Xcode, 2 with no recorded use")
+    }
+
+    @Test func runtimeNoXcodeUsesIsPointedAtTheBuildXcodeUses() throws {
+        let home = try TempHome()
+        // Captured on a Mac with two iOS 27.2 builds; Xcode 27.2 uses 24B8117.
+        let simctl = SimctlQueries(runner: FakeSimctl(home: home.url, xcode: "xcode27"))
+        let report = try #require(Scanner(env: home.env, simctl: simctl, now: fixtureDate).scan([.runtimes]).first)
+        let twins = report.details.filter { $0.name.hasPrefix("iOS 27.2 Simulator") }
+        #expect(twins.count == 2)
+        let unused = try #require(twins.first { !$0.name.contains("24B8117") })
+        #expect(unused.note?.hasSuffix("no Xcode uses this build; Xcode uses 24B8117") == true)
+        let used = try #require(twins.first { $0.name.contains("24B8117") })
+        #expect(used.note?.contains("no Xcode uses this build") == false)
+    }
+
+    @Test func runtimeSizeIncludesItsDyldCacheForThisMacOSBuild() throws {
+        let home = try TempHome()  // macOS build 26B131
+        let current = "SystemDyld/26B131/com.apple.CoreSimulator.SimRuntime.iOS-17-0.21A328"
+        try home.file("\(current)/dyld_sim_shared_cache_arm64e", bytes: 3_000_000)
+        // Left from an older macOS build: not seen to go with the runtime, so not promised.
+        try home.file("SystemDyld/25C56/com.apple.CoreSimulator.SimRuntime.iOS-17-0.21A328/dyld_sim_shared_cache_arm64e", bytes: 1_000_000)
+        // iOS 17.0.1 (21A342) shares the identifier but not the build.
+        try home.file("SystemDyld/26B131/com.apple.CoreSimulator.SimRuntime.iOS-99-0.99Z99/dyld_sim_shared_cache_arm64e", bytes: 5_000_000)
+        let dyld = Sizer.size(of: home.url.appendingPathComponent(current))
+        #expect(dyld >= 3_000_000)
+
+        let simctl = SimctlQueries(runner: FakeSimctl())
+        let report = try #require(Scanner(env: home.env, simctl: simctl, now: fixtureDate).scan([.runtimes]).first)
+        let ios17 = try #require(report.details.first { $0.name.contains("21A328") })
+        #expect(ios17.bytes == 7_559_529_352 + dyld)
+        #expect(ios17.note?.contains("includes \(ByteFormat.string(dyld)) dyld cache") == true)
+        let ios1701 = try #require(report.details.first { $0.name.contains("21A342") })
+        #expect(ios1701.bytes == 7_210_691_623)
+        #expect(ios1701.note?.contains("dyld") == false)
+
+        let plan = try Planner(env: home.env, simctl: simctl).plan(named: [.runtimes], options: CleanOptions(runtimes: ["21A328"]))
+        #expect(plan.actions.map(\.bytes) == [7_559_529_352 + dyld])
+        #expect(plan.actions.first?.note == "includes \(ByteFormat.string(dyld)) dyld cache")
+    }
+
+    @Test func runtimeSizeLeavesOutDyldCacheWhenMacOSBuildIsUnknown() throws {
+        let home = try TempHome()
+        try home.file("SystemDyld/26B131/com.apple.CoreSimulator.SimRuntime.iOS-17-0.21A328/dyld_sim_shared_cache_arm64e", bytes: 3_000_000)
+        var env = home.env
+        env.macOSBuild = nil
+        let report = try #require(Scanner(env: env, simctl: SimctlQueries(runner: FakeSimctl()), now: fixtureDate).scan([.runtimes]).first)
+        #expect(report.details.first { $0.name.contains("21A328") }?.bytes == 7_559_529_352)
+    }
+
+    @Test func runtimeLabelsMatchXcodeComponents() throws {
+        let runtimes = try SimctlQueries(runner: FakeSimctl()).runtimes()
+        let ios17 = try #require(runtimes.first { $0.build == "21A328" })
+        #expect(ios17.label == "iOS 17.0 Simulator (21A328)")
     }
 
     @Test func defaultPolicyCoversExactlyTheAgreedCategories() {

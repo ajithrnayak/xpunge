@@ -64,6 +64,21 @@ public struct SimctlQueries: Sendable {
         }
     }
 
+    /// Runtimes with the size of each one's dyld shared cache filled in.
+    /// The caches live in `<root>/<macOS build>/<runtime identifier>.<build>`. Only the running
+    /// macOS build's cache is counted: a real run showed it goes with the runtime, while caches
+    /// left from older macOS builds haven't been seen, so they aren't promised.
+    public func runtimes(dyldCache root: URL, macOSBuild: String?) throws -> [Runtime] {
+        guard let macOSBuild else { return try runtimes() }
+        let folder = root.appendingPathComponent(macOSBuild, isDirectory: true)
+        return try runtimes().map { runtime in
+            guard let identifier = runtime.runtimeIdentifier else { return runtime }
+            var runtime = runtime
+            runtime.dyldCacheBytes = Sizer.size(of: folder.appendingPathComponent("\(identifier).\(runtime.build)", isDirectory: true))
+            return runtime
+        }
+    }
+
     /// Runtime builds one Xcode prefers for its SDKs.
     static func chosenRuntimeBuilds(_ runner: any SimctlRunning) throws -> Set<String> {
         let data = try runner.run(["runtime", "match", "list", "-j"])
